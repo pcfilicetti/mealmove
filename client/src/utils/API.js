@@ -17,7 +17,7 @@ export default {
         return axios.get("/api/volunteers/" + id);
     },
 
-    deleteDonor: function(id) 
+    deleteDonor: function(id) {
         return axios.delete("/api/donors/" + id);
     },
 
