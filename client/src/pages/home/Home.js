@@ -12,7 +12,7 @@ import Hero from 'grommet/components/Hero';
 // import Button from 'grommet/components/Button';
 import Header from 'grommet/components/Header';
 import Footer from 'grommet/components/Footer';
-import AnnotatedMeter from 'grommet-addons/components/AnnotatedMeter';
+import Meter from 'grommet/components/Meter';
 import App from 'grommet/components/App';
 import Title from 'grommet/components/Title';
 import Menu from 'grommet/components/Menu';
@@ -21,6 +21,7 @@ import Image from 'grommet/components/Image';
 import Heading from 'grommet/components/Heading';
 import Headline from 'grommet/components/Headline';
 // import Box from 'grommet/components/Box';
+import Value from 'grommet/components/Value';
 
 
 
@@ -36,72 +37,72 @@ class Replate extends Component {
 
     render () {
         return (
-            <App>
-       <Article scrollStep={false}>
-  <Section pad='large'
-    justify='center'
-    align='center'>
-    <Headline margin='none'>
-    <Hero background={<Image src="https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                fit='cover'
-                full={true} />}
-                backgroundColorIndex='light'
-                size="large">
-                
-                <Box basis='1/2'
-                    align='end'
-                    pad='medium' />
-                <Box basis='1/2'
-                    align='start'
-                    pad='medium'>
-                <Heading margin='none' justify="start" >
+            <div>
+            <Article scrollStep={false}>
+                <Headline margin='none'>
+                <Hero background={<Image src="https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    fit='cover'
+                    full={true} />}
+                    backgroundColorIndex='light'
+                    size="large">
+                    <Heading margin='none' align="center" size="xlarge" uppercase={true} truncate={true} strong={true}>
                         Replate
-                </Heading>
+                    </Heading>
+                    <Box direction='row'
+                        justify='center'
+                        align='center'>
+                    <Box basis='1/2'
+                        align='end'
+                        pad='medium' />
+                    <Box basis='1/2'
+                        align='start'
+                        pad='medium'>
+                    </Box>
+                    </Box>  
+                </Hero>
+                </Headline>
+            <Section pad='large'
+                justify='center'
+                align='center'
+                colorIndex='grey-4'>
+                <Headline margin='none'>
+                Section 2
+                </Headline>
+            </Section>
+            <Section pad='large'
+                justify='center'
+                align='center'>
+                <Headline margin='none'>
+                Section 3
+                </Headline>
+            </Section>
+            <Section pad='large'
+                justify='center'
+                align='center'
+                colorIndex='grey-4'>
+                <Headline margin='none'>
+                Section 4
+                </Headline>
+            </Section>
+            <Section pad='large'
+                justify='center'
+                align='center'>
+                <Headline margin='none'>
+                <Box align='center'>
+                <Meter type='circle'
+                    value={40}
+                    activeIndex={0} 
+                    onActive={function (index){}}/>
+                <Value value={40} units='GB' />
                 </Box>
-                
-            </Hero>
-    </Headline>
-  </Section>
-  <Section pad='large'
-    justify='center'
-    align='center'
-    colorIndex='grey-4'>
-    <Headline margin='none'>
-      Section 2
-    </Headline>
-  </Section>
-  <Section pad='large'
-    justify='center'
-    align='center'>
-    <Headline margin='none'>
-      Section 3
-    </Headline>
-  </Section>
-  <Section pad='large'
-    justify='center'
-    align='center'
-    colorIndex='grey-4'>
-    <Headline margin='none'>
-      Section 4
-    </Headline>
-  </Section>
-  <Section pad='large'
-    justify='center'
-    align='center'>
-    <Headline margin='none'>
-    <AnnotatedMeter legend={true}
-    size='medium'
-    type='circle'
-    max={70}
-    series={[{"label": "First", "value": 20, "colorIndex": "graph-1"}, {"label": "Second", "value": 50, "colorIndex": "graph-2"}]} />
-    </Headline>
-  </Section>
-</Article>
+                </Headline>
+            </Section>
+            </Article>
 
 
 
 
-            </App>
+            </div>
         );
     }
 
