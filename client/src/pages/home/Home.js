@@ -35,7 +35,6 @@ class Replate extends Component {
     render () {
         return (
             <App>
-
        <Article scrollStep={false}>
   <Section pad='large'
     justify='center'
@@ -46,7 +45,7 @@ class Replate extends Component {
                 full={true} />}
                 backgroundColorIndex='dark'
                 size="large">
-                {/* <Box direction='row'
+                <Box direction='row'
                     justify='center'
                     align='center'>
                 <Box basis='1/2'
@@ -59,7 +58,7 @@ class Replate extends Component {
                         Replate
                 </Heading>
                 </Box>
-                </Box> */}
+                </Box>
             </Hero>
     </Headline>
   </Section>
