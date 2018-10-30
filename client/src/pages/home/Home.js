@@ -24,7 +24,9 @@ import Heading from 'grommet/components/Heading';
 
 import React, { Component } from "react";
 // import API from "../../utils/API";
-
+<style>
+    
+</style>
 class Replate extends Component {
     
     state = {};
@@ -32,28 +34,26 @@ class Replate extends Component {
 
     render () {
         return (
-            <App>
+            <div>
             <Hero background={<Image src='https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
                 fit='cover'
                 full={true} />}
-                backgroundColorIndex='dark'
+                backgroundColorIndex='light'
                 size="large">
-                <Box direction='row'
-                    justify='center'
-                    align='center'>
+                
                 <Box basis='1/2'
                     align='end'
                     pad='medium' />
                 <Box basis='1/2'
                     align='start'
                     pad='medium'>
-                <Heading margin='none'>
+                <Heading margin='none' justify="start" >
                         Replate
                 </Heading>
                 </Box>
-                </Box>
+                
             </Hero>
-            </App>
+            </div>
         );
     }
 
