@@ -1,7 +1,7 @@
 import Article from 'grommet/components/Article';
 // import Columns from 'grommet/components/Columns';
 import Box from 'grommet/components/Box';
-import Sidebar from 'grommet/components/Sidebar';
+// import Sidebar from 'grommet/components/Sidebar';
 import Section from 'grommet/components/Section';
 import Hero from 'grommet/components/Hero';
 // import Form from 'grommet/components/Form';
@@ -10,13 +10,13 @@ import Hero from 'grommet/components/Hero';
 // import Select from 'grommet/components/Select';
 // import RadioButton from 'grommet/components/RadioButton';
 // import Button from 'grommet/components/Button';
-import Header from 'grommet/components/Header';
-import Footer from 'grommet/components/Footer';
+// import Header from 'grommet/components/Header';
+// import Footer from 'grommet/components/Footer';
 import Meter from 'grommet/components/Meter';
-import App from 'grommet/components/App';
-import Title from 'grommet/components/Title';
-import Menu from 'grommet/components/Menu';
-import Anchor from 'grommet/components/Anchor';
+// import App from 'grommet/components/App';
+// import Title from 'grommet/components/Title';
+// import Menu from 'grommet/components/Menu';
+// import Anchor from 'grommet/components/Anchor';
 import Image from 'grommet/components/Image';
 import Heading from 'grommet/components/Heading';
 import Headline from 'grommet/components/Headline';
@@ -60,6 +60,66 @@ class Replate extends Component {
                     </Box>
                     </Box>  
                 </Hero>
+                
+
+<Box direction='row'
+  justify='start'
+  align='center'
+  wrap={true}
+  pad='medium'
+  margin='small'
+  colorIndex='light-2'
+  onClick={1}
+  onFocus={1}>
+  <Value value={1}
+    colorIndex='accent-1' />
+  <Box direction='row'
+    justify='start'
+    align='center'
+    wrap={true}
+    pad='medium'
+    margin='small'
+    colorIndex='light-1'
+    onClick={1}
+    onFocus={1}>
+    <Value value={2} />
+  </Box>
+  <Box direction='row'
+    justify='start'
+    align='center'
+    wrap={true}
+    pad='medium'
+    margin='small'
+    colorIndex='light-1'
+    onClick={1}
+    onFocus={1}>
+    <Value value={3} />
+  </Box>
+  <Box direction='row'
+    justify='start'
+    align='center'
+    wrap={true}
+    pad='medium'
+    margin='small'
+    colorIndex='light-1'
+    onClick={1}
+    onFocus={1}>
+    <Value value={4} />
+  </Box>
+  <Box direction='row'
+    justify='start'
+    align='center'
+    wrap={true}
+    pad='medium'
+    margin='small'
+    colorIndex='light-1'
+    onClick={1}
+    onFocus={1}>
+    <Value value={5} />
+  </Box>
+</Box>
+
+
                 </Headline>
             <Section pad='large'
                 justify='center'
@@ -95,9 +155,15 @@ class Replate extends Component {
                     onActive={function (index){}}/>
                 <Value value={40} units='GB' />
                 </Box>
+
+
                 </Headline>
             </Section>
+
+            
             </Article>
+
+
 
 
 
