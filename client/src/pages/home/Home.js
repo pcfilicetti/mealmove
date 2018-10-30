@@ -33,39 +33,12 @@ class Replate extends Component {
     render () {
         return (
             <App>
-            <Sidebar colorIndex='neutral-1'>
-                <Header pad='medium'
-                    justify='between'>
-                    <Title>
-                    Replate
-                    </Title>
-                </Header>
-                <Box flex='grow'
-                    justify='start'>
-                    <Menu primary={true}>
-                    <Anchor href='#'
-                        className='active'>
-                        First
-                    </Anchor>
-                    <Anchor href='#'>
-                        Second
-                    </Anchor>
-                    <Anchor href='#'>
-                        Third
-                    </Anchor>
-                    </Menu>
-                </Box>
-                <Footer pad='medium'>
-                    {/* <Button icon={} /> */}
-                </Footer>
-            </Sidebar>
-
-            <Hero background={<Image src="https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            <Hero background={<Image src='https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
                 fit='cover'
                 full={true} />}
                 backgroundColorIndex='dark'
                 size="large">
-                {/* <Box direction='row'
+                <Box direction='row'
                     justify='center'
                     align='center'>
                 <Box basis='1/2'
@@ -78,7 +51,7 @@ class Replate extends Component {
                         Replate
                 </Heading>
                 </Box>
-                </Box> */}
+                </Box>
             </Hero>
             </App>
         );
