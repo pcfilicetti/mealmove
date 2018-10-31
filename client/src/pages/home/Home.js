@@ -14,18 +14,27 @@ import Hero from 'grommet/components/Hero';
 // import Footer from 'grommet/components/Footer';
 import Meter from 'grommet/components/Meter';
 // import App from 'grommet/components/App';
-// import Title from 'grommet/components/Title';
+import Title from 'grommet/components/Title';
 // import Menu from 'grommet/components/Menu';
 // import Anchor from 'grommet/components/Anchor';
 import Image from 'grommet/components/Image';
 import Heading from 'grommet/components/Heading';
 import Headline from 'grommet/components/Headline';
-// import Box from 'grommet/components/Box';
 import Value from 'grommet/components/Value';
+import Card from 'grommet/components/Card';
+import Paragraph from 'grommet/components/Paragraph';
+import Tabs from 'grommet/components/Tabs';
+import Tab from 'grommet/components/Tab';
+
+
 
 
 
 import React, { Component } from "react";
+
+function handleClick(e){
+    e.preventDefault();
+}
 // import API from "../../utils/API";
 <style>
     
@@ -69,59 +78,54 @@ class Replate extends Component {
   pad='medium'
   margin='small'
   colorIndex='light-2'
-  onClick={1}
-  onFocus={1}>
-  <Value value={1}
-    colorIndex='accent-1' />
-  <Box direction='row'
-    justify='start'
-    align='center'
-    wrap={true}
-    pad='medium'
-    margin='small'
-    colorIndex='light-1'
-    onClick={1}
-    onFocus={1}>
-    <Value value={2} />
-  </Box>
-  <Box direction='row'
-    justify='start'
-    align='center'
-    wrap={true}
-    pad='medium'
-    margin='small'
-    colorIndex='light-1'
-    onClick={1}
-    onFocus={1}>
-    <Value value={3} />
-  </Box>
-  <Box direction='row'
-    justify='start'
-    align='center'
-    wrap={true}
-    pad='medium'
-    margin='small'
-    colorIndex='light-1'
-    onClick={1}
-    onFocus={1}>
-    <Value value={4} />
-  </Box>
-  <Box direction='row'
-    justify='start'
-    align='center'
-    wrap={true}
-    pad='medium'
-    margin='small'
-    colorIndex='light-1'
-    onClick={1}
-    onFocus={1}>
-    <Value value={5} />
-  </Box>
+  
+  onClick={this.setState}
+  onFocus={handleClick}
+  flex='true'>
+
+  <Tabs>
+  <Tab title='Donate Food'>
+    <Paragraph>
+    <Card 
+  label='Donate Food'
+  heading='Sample Heading'
+  description='Sample description providing more details.' />
+    </Paragraph>
+    <input type='text'
+      value=''
+      onChange={handleClick} />
+  </Tab>
+  <Tab title='Donate Time'>
+    <Paragraph>
+    <Card 
+  label='Donate Time'
+  heading='Sample Heading'
+  description='Sample description providing more details.' />
+    </Paragraph>
+    <input type='text'
+      value=''
+      onChange={handleClick} />
+  </Tab>
+  <Tab title='Donate Money'>
+    <Paragraph>
+    <Card 
+  label='Donate Money'
+  heading='Sample Heading'
+  description='Sample description providing more details.' />
+    </Paragraph>
+    <input type='text'
+      value=''
+      onChange={handleClick} />
+  </Tab>
+</Tabs>
+  
+  
+  
 </Box>
 
 
                 </Headline>
-            <Section pad='large'
+            {/* <Section pad='large'
                 justify='center'
                 align='center'
                 colorIndex='grey-4'>
@@ -143,7 +147,7 @@ class Replate extends Component {
                 <Headline margin='none'>
                 Section 4
                 </Headline>
-            </Section>
+            </Section> */}
             <Section pad='large'
                 justify='center'
                 align='center'>
@@ -157,8 +161,11 @@ class Replate extends Component {
                 </Box>
 
 
+
                 </Headline>
             </Section>
+
+            
 
             
             </Article>
