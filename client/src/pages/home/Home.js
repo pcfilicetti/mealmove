@@ -6,12 +6,20 @@ import Section from 'grommet/components/Section';
 import Hero from 'grommet/components/Hero';
 import Form from 'grommet/components/Form';
 import FormField from 'grommet/components/FormField';
+<<<<<<< HEAD
 // import LoginForm from 'grommet/components/LoginForm';
 // import Select from 'grommet/components/Select';
 // import RadioButton from 'grommet/components/RadioButton';
 import Button from 'grommet/components/Button';
 import Header from 'grommet/components/Header';
 import Footer from 'grommet/components/Footer';
+=======
+import TextInput from 'grommet/components/TextInput';
+// import LoginForm from 'grommet/components/LoginForm';
+// import Select from 'grommet/components/Select';
+// import RadioButton from 'grommet/components/RadioButton';
+// import Button from 'grommet/components/Button';
+>>>>>>> d50d30c89b062f408b59b957ef67c876a794b6d7
 import Meter from 'grommet/components/Meter';
 // import App from 'grommet/components/App';
 // import Menu from 'grommet/components/Menu';
@@ -28,6 +36,7 @@ import Label from 'grommet/components/Label';
 import TextInput from 'grommet/components/TextInput';
 
 import React, { Component } from "react";
+import './Home.css';
 
 function handleClick(e){
     e.preventDefault();
@@ -86,19 +95,20 @@ class Replate extends Component {
                             <Tabs>
                                 {/* TAB 1: DONATE FOOD */}
                                 <Tab title='Donate Food'>
-                                    <Box direction='row' wrap={true}>
-                                        <Box>
-                                            <Paragraph>This is my dissertation on why Peter is wrong about grommet and boxes.</Paragraph>
-                                        </Box>
-                                        <Box>
-                                        <Form>
-                                        <FormField label='Sample label'>
+                                    <Form>
+                                        <FormField label='Establishment Name'>
                                             <TextInput />
                                         </FormField>
-                                        </Form>
-                                        </Box>
-                                    </Box>
-                                    <input type='text' value='' onChange={handleClick} />
+                                        <FormField label='Establishment Name'>
+                                            <TextInput />
+                                        </FormField>
+                                        <FormField label='Establishment Name'>
+                                            <TextInput />
+                                        </FormField>
+                                        <FormField label='Establishment Name'>
+                                            <TextInput />
+                                        </FormField>
+                                    </Form>
                                 </Tab>
                                 {/* TAB 2: DONATE TIME */}
                                 <Tab title='Donate Time'>
