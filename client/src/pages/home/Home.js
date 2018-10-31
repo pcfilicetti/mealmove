@@ -25,7 +25,6 @@ import Card from 'grommet/components/Card';
 import Paragraph from 'grommet/components/Paragraph';
 import Tabs from 'grommet/components/Tabs';
 import Tab from 'grommet/components/Tab';
-import Paragraph from 'grommet/components/Paragraph';
 import Label from 'grommet/components/Label';
 
 import React, { Component } from "react";
@@ -67,61 +66,7 @@ class Replate extends Component {
                     </Box>
                     </Box>  
                 </Hero>
-<Box direction='row'
-  justify='start'
-  align='center'
-  wrap={true}
-  pad='medium'
-  margin='small'
-  colorIndex='light-2'
-  
-  onClick={this.setState}
-  onFocus={handleClick}
-  flex='true'>
 
-  <Tabs>
-  <Tab title='Donate Food'>
-    <Paragraph>
-    <Card 
-  label='Donate Food'
-  heading='Sample Heading'
-  description='Sample description providing more details.' />
-    </Paragraph>
-    <input type='text'
-      value=''
-      onChange={handleClick} />
-  </Tab>
-  <Tab title='Donate Time'>
-    <Paragraph>
-    <Card 
-  label='Donate Time'
-  heading='Sample Heading'
-  description='Sample description providing more details.' />
-    </Paragraph>
-    <input type='text'
-      value=''
-      onChange={handleClick} />
-  </Tab>
-  <Tab title='Donate Money'>
-    <Paragraph>
-    <Card 
-  label='Donate Money'
-  heading='Sample Heading'
-  description='Sample description providing more details.' />
-    </Paragraph>
-    <input type='text'
-      value=''
-      onChange={handleClick} />
-  </Tab>
-</Tabs>
-  
-  
-  
-</Box>
-
-
-                </Headline>
-            {/* <Section pad='large'
 
         {/* how this works section */}
             <Section pad='large'
@@ -184,6 +129,57 @@ class Replate extends Component {
                 <Heading margin='none' align="start" size="medium" uppercase={true} truncate={true} strong={true}>
                 HELP US HELP OUR COMMUNITY
                 </Heading>
+                <Box direction='row'
+                justify='start'
+                align='center'
+                wrap={true}
+                pad='medium'
+                margin='small'
+                colorIndex='light-2'
+                
+                onClick={this.setState}
+                onFocus={handleClick}
+                flex='true'>
+
+                <Tabs>
+                <Tab title='Donate Food'>
+                    <Paragraph>
+                    <Card 
+                label='Donate Food'
+                heading='Sample Heading'
+                description='Sample description providing more details.' />
+                    </Paragraph>
+                    <input type='text'
+                    value=''
+                    onChange={handleClick} />
+                </Tab>
+                <Tab title='Donate Time'>
+                    <Paragraph>
+                    <Card 
+                label='Donate Time'
+                heading='Sample Heading'
+                description='Sample description providing more details.' />
+                    </Paragraph>
+                    <input type='text'
+                    value=''
+                    onChange={handleClick} />
+                </Tab>
+                <Tab title='Donate Money'>
+                    <Paragraph>
+                    <Card 
+                label='Donate Money'
+                heading='Sample Heading'
+                description='Sample description providing more details.' />
+                    </Paragraph>
+                    <input type='text'
+                    value=''
+                    onChange={handleClick} />
+                </Tab>
+                </Tabs>
+                
+                
+                
+                </Box>
             </Section>
             <Section pad='large'
                 justify='center'
@@ -209,6 +205,7 @@ class Replate extends Component {
 
                 </Headline>
             </Section>
+            <Section>
                 <Heading margin='none' align="start" size="medium" uppercase={true} truncate={true} strong={true}>
                 PARTNERED BUSINESSES
                 </Heading>
