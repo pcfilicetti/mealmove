@@ -14,20 +14,25 @@ import Hero from 'grommet/components/Hero';
 // import Footer from 'grommet/components/Footer';
 import Meter from 'grommet/components/Meter';
 // import App from 'grommet/components/App';
-// import Title from 'grommet/components/Title';
+import Title from 'grommet/components/Title';
 // import Menu from 'grommet/components/Menu';
 // import Anchor from 'grommet/components/Anchor';
 import Image from 'grommet/components/Image';
 import Heading from 'grommet/components/Heading';
 import Headline from 'grommet/components/Headline';
-// import Box from 'grommet/components/Box';
 import Value from 'grommet/components/Value';
+import Card from 'grommet/components/Card';
+import Paragraph from 'grommet/components/Paragraph';
+import Tabs from 'grommet/components/Tabs';
+import Tab from 'grommet/components/Tab';
 import Paragraph from 'grommet/components/Paragraph';
 import Label from 'grommet/components/Label';
 
-
-
 import React, { Component } from "react";
+
+function handleClick(e){
+    e.preventDefault();
+}
 // import API from "../../utils/API";
 <style>
     
@@ -62,6 +67,61 @@ class Replate extends Component {
                     </Box>
                     </Box>  
                 </Hero>
+<Box direction='row'
+  justify='start'
+  align='center'
+  wrap={true}
+  pad='medium'
+  margin='small'
+  colorIndex='light-2'
+  
+  onClick={this.setState}
+  onFocus={handleClick}
+  flex='true'>
+
+  <Tabs>
+  <Tab title='Donate Food'>
+    <Paragraph>
+    <Card 
+  label='Donate Food'
+  heading='Sample Heading'
+  description='Sample description providing more details.' />
+    </Paragraph>
+    <input type='text'
+      value=''
+      onChange={handleClick} />
+  </Tab>
+  <Tab title='Donate Time'>
+    <Paragraph>
+    <Card 
+  label='Donate Time'
+  heading='Sample Heading'
+  description='Sample description providing more details.' />
+    </Paragraph>
+    <input type='text'
+      value=''
+      onChange={handleClick} />
+  </Tab>
+  <Tab title='Donate Money'>
+    <Paragraph>
+    <Card 
+  label='Donate Money'
+  heading='Sample Heading'
+  description='Sample description providing more details.' />
+    </Paragraph>
+    <input type='text'
+      value=''
+      onChange={handleClick} />
+  </Tab>
+</Tabs>
+  
+  
+  
+</Box>
+
+
+                </Headline>
+            {/* <Section pad='large'
 
         {/* how this works section */}
             <Section pad='large'
@@ -129,11 +189,30 @@ class Replate extends Component {
                 justify='center'
                 align='center'
                 colorIndex='grey-4'>
+                <Headline margin='none'>
+                Section 4
+                </Headline>
+            </Section> */}
+            <Section pad='large'
+                justify='center'
+                align='center'>
+                <Headline margin='none'>
+                <Box align='center'>
+                <Meter type='circle'
+                    value={40}
+                    activeIndex={0} 
+                    onActive={function (index){}}/>
+                <Value value={40} units='GB' />
+                </Box>
+
+
+
+                </Headline>
+            </Section>
                 <Heading margin='none' align="start" size="medium" uppercase={true} truncate={true} strong={true}>
                 PARTNERED BUSINESSES
                 </Heading>
             </Section>
- 
             </Article>
 
 
