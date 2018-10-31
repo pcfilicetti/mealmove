@@ -4304,6 +4304,11 @@ grommet-css@^1.6.0:
   dependencies:
     grommet "^1.6.0"
 
+grommet-icons@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-3.1.0.tgz#8bba65157c96aeb87bd6bdf7c162a1aba7005db1"
+  integrity sha512-o7cek/FxvfedW8lZ0bHOVLxWXw89erAtpUtNTORXGRdkdPTKutARH+2csjLHE40zJ2AhqTTcgYCW4euKuq5bRQ==
+
 grommet@^1.11.0, grommet@^1.5.0, grommet@^1.6.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/grommet/-/grommet-1.11.0.tgz#ebc8878d24a3546e214ae6b10487265610db8b6b"
