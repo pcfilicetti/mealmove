@@ -21,6 +21,10 @@ import Image from 'grommet/components/Image';
 import Heading from 'grommet/components/Heading';
 import Headline from 'grommet/components/Headline';
 import Value from 'grommet/components/Value';
+import Button from 'grommet/components/Button';
+import ClockIcon from 'grommet/components/icons/base/Clock';
+import CurrencyIcon from 'grommet/components/icons/base/Currency';
+import RestaurantIcon from 'grommet/components/icons/base/Restaurant';
 import Card from 'grommet/components/Card';
 import Paragraph from 'grommet/components/Paragraph';
 import Tabs from 'grommet/components/Tabs';
@@ -121,6 +125,22 @@ class Replate extends Component {
 
 
                 </Headline>
+            <Section pad='large' justify='center' align='center' colorIndex='grey-4'>
+                <Headline margin='none'>Section 2</Headline>
+                <Box direction='row' margin='small' justify='start' align='center' wrap={true} pad='none'>
+                    <Button icon={<ClockIcon />}
+                    label='Donate Time'
+                    onClick={console.log("insert dropdown function here")}
+                    href='#' />
+                    <Button icon={<RestaurantIcon />}
+                    label='Donate Food'
+                    onClick={console.log("insert dropdown function here")}
+                    href='#' />
+                    <Button icon={<CurrencyIcon />}
+                    label='Donate Money'
+                    onClick={console.log("insert dropdown function here")}
+                    href='#' />
+                </Box>
             {/* <Section pad='large'
 
         {/* how this works section */}
