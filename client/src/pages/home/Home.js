@@ -21,6 +21,10 @@ import Image from 'grommet/components/Image';
 import Heading from 'grommet/components/Heading';
 import Headline from 'grommet/components/Headline';
 import Value from 'grommet/components/Value';
+import Button from 'grommet/components/Button';
+import ClockIcon from 'grommet/components/icons/base/Clock';
+import CurrencyIcon from 'grommet/components/icons/base/Currency';
+import RestaurantIcon from 'grommet/components/icons/base/Restaurant';
 import Card from 'grommet/components/Card';
 import Paragraph from 'grommet/components/Paragraph';
 import Tabs from 'grommet/components/Tabs';
@@ -66,6 +70,7 @@ class Replate extends Component {
                     </Box>
                     </Box>  
                 </Hero>
+
 
 
         {/* how this works section */}
