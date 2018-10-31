@@ -9,7 +9,7 @@ import FormField from 'grommet/components/FormField';
 import TextInput from 'grommet/components/TextInput';
 // import LoginForm from 'grommet/components/LoginForm';
 // import Select from 'grommet/components/Select';
-// import RadioButton from 'grommet/components/RadioButton';
+import CheckBox from 'grommet/components/CheckBox';
 // import Button from 'grommet/components/Button';
 import Meter from 'grommet/components/Meter';
 // import App from 'grommet/components/App';
@@ -87,6 +87,23 @@ class Replate extends Component {
                                 <Tab title='Donate Food'>
                                     <Form>
                                         <FormField label='Establishment Name'>
+                                            <TextInput placeHolder="e.g. Wegmans, Panera Bread, etc." />
+                                        </FormField>
+                                        <FormField label='Email Address'>
+                                            <TextInput placeHolder="example@email.com" />
+                                        </FormField>
+                                        <FormField label='Phone Number'>
+                                            <TextInput placeHolder="555-555-5555" />
+                                        </FormField>
+                                        <FormField label='Best Method of Contact'>
+                                            <CheckBox name='email' label='Email' />
+                                            <CheckBox name='phoneNumber' label='Phone Number' />
+                                        </FormField>
+                                    </Form>
+                                </Tab>
+                                <Tab title='Donate Time'>
+                                    <Form>
+                                        <FormField label='Name'>
                                             <TextInput />
                                         </FormField>
                                         <FormField label='Establishment Name'>
@@ -100,17 +117,8 @@ class Replate extends Component {
                                         </FormField>
                                     </Form>
                                 </Tab>
-                                <Tab title='Donate Time'>
-                                    <Paragraph>
-                                        <Card label='Donate Time' heading='Sample Heading' description='Sample description providing more details.' />
-                                    </Paragraph>
-                                    <input type='text' value='' onChange={handleClick} />
-                                </Tab>
                                 <Tab title='Donate Money'>
-                                    <Paragraph>
-                                        <Card label='Donate Money' heading='Sample Heading' description='Sample description providing more details.' />
-                                    </Paragraph>
-                                    <input type='text' value='' onChange={handleClick} />
+                                    <Paragraph>Coming soon...</Paragraph>
                                 </Tab>
                             </Tabs>
                         </Box>
