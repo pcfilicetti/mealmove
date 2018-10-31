@@ -81,10 +81,11 @@ class Replate extends Component {
                 <Heading margin='none' align="start" size="medium" uppercase={true} truncate={true} strong={true}>
                 HOW THIS WORKS
                 </Heading>
+                <Box id="howThisWorks" >
                 <Paragraph align="center" size="large">
                     How can we waste less food and feed more people?
                 </Paragraph>
-                <Box direction="row" justify="start" align="center" wrap={true} pad="small" margin="small">
+                <Box direction="row" justify="start" align="center" wrap={true} pad="small" margin="small" >
                 <Box direction="row" wrap={false}>
                 <Meter 
                     id='landfillMeter'
@@ -106,7 +107,7 @@ class Replate extends Component {
                     onActive={function (index){}}
                     label={<Value value={72} units='Billion' size="small" />}
                     size=""/>
-                <Label labelFor='#landfillMeter' size="medium"> pounds of food is wasted each year </Label>
+                <Label labelFor='#landfillMeter' size="medium"> pounds of food are wasted each year </Label>
                 </Box>
                 
                 <Box direction="row" wrap={false}>
@@ -119,7 +120,7 @@ class Replate extends Component {
                     onActive={function (index){}}
                     label={<Value value={1} units='in 3' size="medium" />}
                     size=""/>
-                <Label labelFor='#landfillMeter' size="medium"> residents in Washington, D.C. is at risk of hunger.  </Label>
+                <Label labelFor='#landfillMeter' size="medium"> residents in Washington, D.C. are at risk of hunger.  </Label>
                 </Box>
                 
                 </Box>
@@ -127,15 +128,14 @@ class Replate extends Component {
                     Replate aims to connect those with excess food to those who are in need. We are targeting restaurants, grocery stores and farms and asking them to donate food that would be thrown out. 
                     Volunters pick up this food and bring it to local food banks.
                 </div>
+                </Box>
             </Section>
-            <Section pad='large'
-                justify='center'
-                align='center'>
-                <Heading margin='none' align="start" size="medium" uppercase={true} truncate={true} strong={true}>
+
+            <Section pad='large'>
+                <Heading margin='none' align="center" size="medium" uppercase={true} truncate={true} strong={true}>
                 HELP US HELP OUR COMMUNITY
                 </Heading>
                 <Box direction='row'
-                justify='start'
                 align='center'
                 wrap={true}
                 pad='medium'
@@ -146,8 +146,8 @@ class Replate extends Component {
                 onFocus={handleClick}
                 flex='true'>
 
-                <Tabs>
-                <Tab title='Donate Food'>
+                <Tabs justify="center">
+                <Tab title='Donate Food' >
                     <Paragraph>
                     <Card 
                 label='Donate Food'
@@ -158,7 +158,7 @@ class Replate extends Component {
                     value=''
                     onChange={handleClick} />
                 </Tab>
-                <Tab title='Donate Time'>
+                <Tab title='Donate Time' >
                     <Paragraph>
                     <Card 
                 label='Donate Time'
@@ -181,16 +181,16 @@ class Replate extends Component {
                     onChange={handleClick} />
                 </Tab>
                 </Tabs>
-                
-                
-                
                 </Box>
             </Section>
 
-            <Section pad='large' colorIndex='grey-4'>
+            <Section pad='large' colorIndex='grey-4' align="center" justify="center">
                 <Heading margin='none' align="center" size="medium" uppercase={true} truncate={true} strong={true}>
                 PARTNERED BUSINESSES
                 </Heading>
+                <Paragraph align="center" justify="center" size="large" padding="large">
+                    This is where donating businesses will be featured 
+                </Paragraph>
             </Section>
             </Article>
 
