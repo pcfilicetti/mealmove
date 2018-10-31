@@ -22,6 +22,8 @@ import Heading from 'grommet/components/Heading';
 import Headline from 'grommet/components/Headline';
 // import Box from 'grommet/components/Box';
 import Value from 'grommet/components/Value';
+import Paragraph from 'grommet/components/Paragraph';
+import Label from 'grommet/components/Label';
 
 
 
@@ -39,15 +41,15 @@ class Replate extends Component {
         return (
             <div>
             <Article scrollStep={false}>
-                <Headline margin='none'>
+            {/* hero page */}
                 <Hero background={<Image src="https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                     fit='cover'
                     full={true} />}
                     backgroundColorIndex='light'
                     size="large">
-                    <Heading margin='none' align="center" size="xlarge" uppercase={true} truncate={true} strong={true}>
-                        Replate
-                    </Heading>
+                    <Headline margin='none' align="center" size="xlarge" uppercase={true} truncate={true} strong={true}>
+                        REPLATE
+                    </Headline>
                     <Box direction='row'
                         justify='center'
                         align='center'>
@@ -60,107 +62,78 @@ class Replate extends Component {
                     </Box>
                     </Box>  
                 </Hero>
-                
 
-<Box direction='row'
-  justify='start'
-  align='center'
-  wrap={true}
-  pad='medium'
-  margin='small'
-  colorIndex='light-2'
-  onClick={1}
-  onFocus={1}>
-  <Value value={1}
-    colorIndex='accent-1' />
-  <Box direction='row'
-    justify='start'
-    align='center'
-    wrap={true}
-    pad='medium'
-    margin='small'
-    colorIndex='light-1'
-    onClick={1}
-    onFocus={1}>
-    <Value value={2} />
-  </Box>
-  <Box direction='row'
-    justify='start'
-    align='center'
-    wrap={true}
-    pad='medium'
-    margin='small'
-    colorIndex='light-1'
-    onClick={1}
-    onFocus={1}>
-    <Value value={3} />
-  </Box>
-  <Box direction='row'
-    justify='start'
-    align='center'
-    wrap={true}
-    pad='medium'
-    margin='small'
-    colorIndex='light-1'
-    onClick={1}
-    onFocus={1}>
-    <Value value={4} />
-  </Box>
-  <Box direction='row'
-    justify='start'
-    align='center'
-    wrap={true}
-    pad='medium'
-    margin='small'
-    colorIndex='light-1'
-    onClick={1}
-    onFocus={1}>
-    <Value value={5} />
-  </Box>
-</Box>
-
-
-                </Headline>
+        {/* how this works section */}
             <Section pad='large'
                 justify='center'
                 align='center'
                 colorIndex='grey-4'>
-                <Headline margin='none'>
-                Section 2
-                </Headline>
-            </Section>
-            <Section pad='large'
-                justify='center'
-                align='center'>
-                <Headline margin='none'>
-                Section 3
-                </Headline>
-            </Section>
-            <Section pad='large'
-                justify='center'
-                align='center'
-                colorIndex='grey-4'>
-                <Headline margin='none'>
-                Section 4
-                </Headline>
-            </Section>
-            <Section pad='large'
-                justify='center'
-                align='center'>
-                <Headline margin='none'>
-                <Box align='center'>
-                <Meter type='circle'
-                    value={40}
-                    activeIndex={0} 
-                    onActive={function (index){}}/>
-                <Value value={40} units='GB' />
+                <Heading margin='none' align="start" size="medium" uppercase={true} truncate={true} strong={true}>
+                HOW THIS WORKS
+                </Heading>
+                <Paragraph align="center" size="large">
+                    How can we waste less food and feed more people?
+                </Paragraph>
+                <Box direction="row" justify="start" align="center" wrap={true} pad="small" margin="small">
+                <Box direction="row" wrap={false}>
+                <Meter 
+                    id='landfillMeter'
+                    type='circle'
+                    value={21}
+                    activeIndex={0}
+                    onActive={function (index){}}
+                    label={<Value value={21} units='%' size="medium" />}
+                    size=""/>
+                <Label labelFor='#landfillMeter' size="medium" > of landfill volume is food waste </Label>
                 </Box>
-
-
-                </Headline>
+                
+                <Box direction="row" wrap={false}>
+                <Meter 
+                    id='lbFoodMeter'
+                    type='circle'
+                    value={72}
+                    activeIndex={0}
+                    onActive={function (index){}}
+                    label={<Value value={72} units='Billion' size="small" />}
+                    size=""/>
+                <Label labelFor='#landfillMeter' size="medium"> pounds of food is wasted each year </Label>
+                </Box>
+                
+                <Box direction="row" wrap={false}>
+                <Meter 
+                    id='moneyMeter'
+                    type='circle'
+                    value={1}
+                    max={3}
+                    activeIndex={0}
+                    onActive={function (index){}}
+                    label={<Value value={1} units='in 3' size="medium" />}
+                    size=""/>
+                <Label labelFor='#landfillMeter' size="medium"> residents in Washington, D.C. is at risk of hunger.  </Label>
+                </Box>
+                
+                </Box>
+                <div id="aboutText" >
+                    Replate aims to connect those with excess food to those who are in need. We are targeting restaurants, grocery stores and farms and asking them to donate food that would be thrown out. 
+                    Volunters pick up this food and bring it to local food banks.
+                </div>
             </Section>
-
-            
+            <Section pad='large'
+                justify='center'
+                align='center'>
+                <Heading margin='none' align="start" size="medium" uppercase={true} truncate={true} strong={true}>
+                HELP US HELP OUR COMMUNITY
+                </Heading>
+            </Section>
+            <Section pad='large'
+                justify='center'
+                align='center'
+                colorIndex='grey-4'>
+                <Heading margin='none' align="start" size="medium" uppercase={true} truncate={true} strong={true}>
+                PARTNERED BUSINESSES
+                </Heading>
+            </Section>
+ 
             </Article>
 
 
