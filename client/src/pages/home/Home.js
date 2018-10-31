@@ -24,7 +24,10 @@ import Paragraph from 'grommet/components/Paragraph';
 import Tabs from 'grommet/components/Tabs';
 import Tab from 'grommet/components/Tab';
 import Label from 'grommet/components/Label';
-
+import CafeteriaIcon from 'grommet/components/icons/base/Cafeteria';
+import FormNextLinkIcon from 'grommet/components/icons/base/FormNextLink';
+import CarIcon from 'grommet/components/icons/base/Car';
+import GroupIcon from 'grommet/components/icons/base/Group';
 import React, { Component } from "react";
 
 function handleClick(e){
@@ -76,6 +79,13 @@ class Replate extends Component {
                             Replate aims to connect those with excess food to those who are in need. We are targeting restaurants, grocery stores and farms and asking them to donate food that would be thrown out. 
                             Volunters pick up this food and bring it to local food banks.
                         </div>
+                        <Box direction='row'>
+                             <CafeteriaIcon pad='medium' margin='small'color='brand' size='xlarge'/> 
+                             <FormNextLinkIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/> 
+                             <CarIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/>
+                             <FormNextLinkIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/>
+                             <GroupIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/>
+                        </Box>
                     </Section>
 
                     {/* signup form section */}
