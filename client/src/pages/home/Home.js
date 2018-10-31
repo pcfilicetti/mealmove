@@ -55,7 +55,7 @@ class Replate extends Component {
                     full={true} />}
                     backgroundColorIndex='light'
                     size="large">
-                    <Headline margin='none' align="center" size="xlarge" uppercase={true} truncate={true} strong={true}>
+                    <Headline margin='none' align="center" size="xlarge" uppercase={true} truncate={true} >
                         REPLATE
                     </Headline>
                     <Box direction='row'
@@ -186,32 +186,9 @@ class Replate extends Component {
                 
                 </Box>
             </Section>
-            <Section pad='large'
-                justify='center'
-                align='center'
-                colorIndex='grey-4'>
-                <Headline margin='none'>
-                Section 4
-                </Headline>
-            </Section> */}
-            <Section pad='large'
-                justify='center'
-                align='center'>
-                <Headline margin='none'>
-                <Box align='center'>
-                <Meter type='circle'
-                    value={40}
-                    activeIndex={0} 
-                    onActive={function (index){}}/>
-                <Value value={40} units='GB' />
-                </Box>
 
-
-
-                </Headline>
-            </Section>
-            <Section>
-                <Heading margin='none' align="start" size="medium" uppercase={true} truncate={true} strong={true}>
+            <Section pad='large' colorIndex='grey-4'>
+                <Heading margin='none' align="center" size="medium" uppercase={true} truncate={true} strong={true}>
                 PARTNERED BUSINESSES
                 </Heading>
             </Section>
