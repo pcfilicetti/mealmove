@@ -9,7 +9,7 @@ import FormField from 'grommet/components/FormField';
 import TextInput from 'grommet/components/TextInput';
 // import LoginForm from 'grommet/components/LoginForm';
 // import Select from 'grommet/components/Select';
-// import RadioButton from 'grommet/components/RadioButton';
+import CheckBox from 'grommet/components/CheckBox';
 // import Button from 'grommet/components/Button';
 import Meter from 'grommet/components/Meter';
 // import App from 'grommet/components/App';
@@ -24,9 +24,11 @@ import Paragraph from 'grommet/components/Paragraph';
 import Tabs from 'grommet/components/Tabs';
 import Tab from 'grommet/components/Tab';
 import Label from 'grommet/components/Label';
-
+import CafeteriaIcon from 'grommet/components/icons/base/Cafeteria';
+import FormNextLinkIcon from 'grommet/components/icons/base/FormNextLink';
+import CarIcon from 'grommet/components/icons/base/Car';
+import GroupIcon from 'grommet/components/icons/base/Group';
 import React, { Component } from "react";
-import './Home.css';
 
 function handleClick(e){
     e.preventDefault();
@@ -76,6 +78,13 @@ class Replate extends Component {
                             Replate aims to connect those with excess food to those who are in need. We are targeting restaurants, grocery stores and farms and asking them to donate food that would be thrown out. 
                             Volunters pick up this food and bring it to local food banks.
                         </div>
+                        <Box direction='row'>
+                             <CafeteriaIcon pad='medium' margin='small'color='brand' size='xlarge'/> 
+                             <FormNextLinkIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/> 
+                             <CarIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/>
+                             <FormNextLinkIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/>
+                             <GroupIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/>
+                        </Box>
                     </Section>
 
                     {/* signup form section */}
@@ -85,6 +94,7 @@ class Replate extends Component {
                             <Tabs>
                                 {/* TAB 1: DONATE FOOD */}
                                 <Tab title='Donate Food'>
+
                                     <Box direction='row' justify='center' align='center' wrap={true} pad='medium' margin='small'>
                                         <Box wrap={false} margin='large' pad='large'>
                                             <Paragraph size='medium'>
@@ -141,11 +151,9 @@ class Replate extends Component {
                                     </Box>
                                 </Tab>
                                 {/* TAB 3: DONATE MONEY */}
+
                                 <Tab title='Donate Money'>
-                                    <Paragraph>
-                                        <Card label='Donate Money' heading='Sample Heading' description='Sample description providing more details.' />
-                                    </Paragraph>
-                                    <input type='text' value='' onChange={handleClick} />
+                                    <Paragraph>Coming soon...</Paragraph>
                                 </Tab>
                             </Tabs>
                         </Box>
