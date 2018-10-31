@@ -26,7 +26,6 @@ import Tab from 'grommet/components/Tab';
 import Label from 'grommet/components/Label';
 
 import React, { Component } from "react";
-import './Home.css';
 
 function handleClick(e){
     e.preventDefault();
