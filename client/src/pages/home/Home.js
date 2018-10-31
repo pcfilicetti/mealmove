@@ -6,20 +6,11 @@ import Section from 'grommet/components/Section';
 import Hero from 'grommet/components/Hero';
 import Form from 'grommet/components/Form';
 import FormField from 'grommet/components/FormField';
-<<<<<<< HEAD
-// import LoginForm from 'grommet/components/LoginForm';
-// import Select from 'grommet/components/Select';
-// import RadioButton from 'grommet/components/RadioButton';
-import Button from 'grommet/components/Button';
-import Header from 'grommet/components/Header';
-import Footer from 'grommet/components/Footer';
-=======
 import TextInput from 'grommet/components/TextInput';
 // import LoginForm from 'grommet/components/LoginForm';
 // import Select from 'grommet/components/Select';
 // import RadioButton from 'grommet/components/RadioButton';
 // import Button from 'grommet/components/Button';
->>>>>>> d50d30c89b062f408b59b957ef67c876a794b6d7
 import Meter from 'grommet/components/Meter';
 // import App from 'grommet/components/App';
 // import Menu from 'grommet/components/Menu';
@@ -33,7 +24,6 @@ import Paragraph from 'grommet/components/Paragraph';
 import Tabs from 'grommet/components/Tabs';
 import Tab from 'grommet/components/Tab';
 import Label from 'grommet/components/Label';
-import TextInput from 'grommet/components/TextInput';
 
 import React, { Component } from "react";
 import './Home.css';
@@ -90,32 +80,65 @@ class Replate extends Component {
 
                     {/* signup form section */}
                     <Section pad='large' >
-                        <Heading margin='medium' justify='center' align='center' size="medium" uppercase={true} truncate={true} strong={true}>HELP US HELP OUR COMMUNITY</Heading>
+                        <Heading margin='medium' justify='center' align='center' size="medium" uppercase={true} strong={true}>HELP US HELP OUR COMMUNITY</Heading>
                         <Box direction='row' justify='center' align='center' wrap={true} pad='medium' margin='small' colorIndex='light-2' onClick={this.setState} onFocus={handleClick} flex='true'>
                             <Tabs>
                                 {/* TAB 1: DONATE FOOD */}
                                 <Tab title='Donate Food'>
-                                    <Form>
-                                        <FormField label='Establishment Name'>
-                                            <TextInput />
-                                        </FormField>
-                                        <FormField label='Establishment Name'>
-                                            <TextInput />
-                                        </FormField>
-                                        <FormField label='Establishment Name'>
-                                            <TextInput />
-                                        </FormField>
-                                        <FormField label='Establishment Name'>
-                                            <TextInput />
-                                        </FormField>
-                                    </Form>
+                                    <Box direction='row' justify='center' align='center' wrap={true} pad='medium' margin='small'>
+                                        <Box wrap={false} margin='large' pad='large'>
+                                            <Paragraph size='medium'>
+                                                Are you a part of a restaurant group, bakery, supermarket, grocery store, farm, or any other business with excess food? YOUR COMMUNITY NEEDS YOUR HELP!
+                                                <br></br><br></br>
+                                                We are looking for businesses to help by giving unsellable but consumable food to those in need.
+                                                Instead of throwing out food waste, your business could sign up with Replate and send it with us to local food banks.
+                                                <br></br><br></br>
+                                                We will organize the pickups, you just need to select the time and days of the week that are most convenient for your crew.
+                                            </Paragraph>
+                                        </Box>
+                                        <Box wrap={false} margin='small'>
+                                            <Form>
+                                                <FormField label='Establishment Name'>
+                                                    <TextInput />
+                                                </FormField>
+                                                <FormField label='email'>
+                                                    <TextInput />
+                                                </FormField>
+                                                <FormField label='Phone'>
+                                                    <TextInput />
+                                                </FormField>
+                                            </Form>
+                                        </Box>
+                                    </Box>
                                 </Tab>
                                 {/* TAB 2: DONATE TIME */}
                                 <Tab title='Donate Time'>
-                                    <Paragraph>
-                                        <Card label='Donate Time' heading='Sample Heading' description='Sample description providing more details.' />
-                                    </Paragraph>
-                                    <input type='text' value='' onChange={handleClick} />
+                                    <Box direction='row' justify='center' align='center' wrap={true} pad='medium' margin='small'>
+                                        <Box wrap={false} margin='large' pad='large'>
+                                            <Paragraph size='medium'>
+                                                Are you looking for a way to help your neighbors and build volunteer hours? YOUR COMMUNITY NEEDS YOUR HELP!
+                                                <br></br><br></br>
+                                                If you have a clean driving record and valid drivers license please sign up to help pick up boxes of food from participating businesses and dropping off at designated food banks.
+                                                <br></br><br></br>
+                                                If you don't drive, don't worry! You can help us sort food and organize pickups.
+                                                <br></br><br></br>
+                                                Sign up with your available days and we will contact you.
+                                            </Paragraph>
+                                        </Box>
+                                        <Box wrap={false} margin='small'>
+                                            <Form>
+                                                <FormField label='Name'>
+                                                    <TextInput />
+                                                </FormField>
+                                                <FormField label='email'>
+                                                    <TextInput />
+                                                </FormField>
+                                                <FormField label='Phone'>
+                                                    <TextInput />
+                                                </FormField>
+                                            </Form>
+                                        </Box>
+                                    </Box>
                                 </Tab>
                                 {/* TAB 3: DONATE MONEY */}
                                 <Tab title='Donate Money'>
