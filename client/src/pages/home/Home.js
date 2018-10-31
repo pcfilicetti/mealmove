@@ -4,14 +4,13 @@ import Box from 'grommet/components/Box';
 // import Sidebar from 'grommet/components/Sidebar';
 import Section from 'grommet/components/Section';
 import Hero from 'grommet/components/Hero';
-// import Form from 'grommet/components/Form';
-// import FormField from 'grommet/components/FormField';
+import Form from 'grommet/components/Form';
+import FormField from 'grommet/components/FormField';
+import TextInput from 'grommet/components/TextInput';
 // import LoginForm from 'grommet/components/LoginForm';
 // import Select from 'grommet/components/Select';
 // import RadioButton from 'grommet/components/RadioButton';
 // import Button from 'grommet/components/Button';
-// import Header from 'grommet/components/Header';
-// import Footer from 'grommet/components/Footer';
 import Meter from 'grommet/components/Meter';
 // import App from 'grommet/components/App';
 // import Menu from 'grommet/components/Menu';
@@ -27,6 +26,7 @@ import Tab from 'grommet/components/Tab';
 import Label from 'grommet/components/Label';
 
 import React, { Component } from "react";
+import './Home.css';
 
 function handleClick(e){
     e.preventDefault();
@@ -81,14 +81,24 @@ class Replate extends Component {
 
                     {/* signup form section */}
                     <Section pad='large' justify='center' align='center'>
-                        <Heading margin='none' align="start" size="medium" uppercase={true} truncate={true} strong={true}>HELP US HELP OUR COMMUNITY</Heading>
-                        <Box direction='row' justify='start' align='center' wrap={true} pad='medium' margin='small' colorIndex='light-2' onClick={this.setState} onFocus={handleClick} flex='true'>
+                        <Heading margin='none' align="center" size="medium" uppercase={true} truncate={false} strong={true}>HELP US HELP OUR COMMUNITY</Heading>
+                        <Box direction='row' justify='center' align='center' wrap={true} full='horizontal' margin='none' colorIndex='light-2' onClick={this.setState} onFocus={handleClick} flex='true'>
                             <Tabs>
                                 <Tab title='Donate Food'>
-                                    <Paragraph>
-                                        <Card label='Donate Food' heading='Sample Heading' description='Sample description providing more details.' />
-                                    </Paragraph>
-                                    <input type='text' value='' onChange={handleClick} />
+                                    <Form>
+                                        <FormField label='Establishment Name'>
+                                            <TextInput />
+                                        </FormField>
+                                        <FormField label='Establishment Name'>
+                                            <TextInput />
+                                        </FormField>
+                                        <FormField label='Establishment Name'>
+                                            <TextInput />
+                                        </FormField>
+                                        <FormField label='Establishment Name'>
+                                            <TextInput />
+                                        </FormField>
+                                    </Form>
                                 </Tab>
                                 <Tab title='Donate Time'>
                                     <Paragraph>
