@@ -14,20 +14,29 @@ import Hero from 'grommet/components/Hero';
 // import Footer from 'grommet/components/Footer';
 import Meter from 'grommet/components/Meter';
 // import App from 'grommet/components/App';
-// import Title from 'grommet/components/Title';
+import Title from 'grommet/components/Title';
 // import Menu from 'grommet/components/Menu';
 // import Anchor from 'grommet/components/Anchor';
 import Image from 'grommet/components/Image';
 import Heading from 'grommet/components/Heading';
 import Headline from 'grommet/components/Headline';
-// import Box from 'grommet/components/Box';
 import Value from 'grommet/components/Value';
 import Button from 'grommet/components/Button';
 import ClockIcon from 'grommet/components/icons/base/Clock';
 import CurrencyIcon from 'grommet/components/icons/base/Currency';
 import RestaurantIcon from 'grommet/components/icons/base/Restaurant';
+import Card from 'grommet/components/Card';
+import Paragraph from 'grommet/components/Paragraph';
+import Tabs from 'grommet/components/Tabs';
+import Tab from 'grommet/components/Tab';
+import Paragraph from 'grommet/components/Paragraph';
+import Label from 'grommet/components/Label';
 
 import React, { Component } from "react";
+
+function handleClick(e){
+    e.preventDefault();
+}
 // import API from "../../utils/API";
 <style>
     
@@ -41,15 +50,15 @@ class Replate extends Component {
         return (
             <div>
             <Article scrollStep={false}>
-                <Headline margin='none'>
+            {/* hero page */}
                 <Hero background={<Image src="https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                     fit='cover'
                     full={true} />}
                     backgroundColorIndex='light'
                     size="large">
-                    <Heading margin='none' align="center" size="xlarge" uppercase={true} truncate={true} strong={true}>
-                        Replate
-                    </Heading>
+                    <Headline margin='none' align="center" size="xlarge" uppercase={true} truncate={true} strong={true}>
+                        REPLATE
+                    </Headline>
                     <Box direction='row'
                         justify='center'
                         align='center'>
@@ -62,8 +71,6 @@ class Replate extends Component {
                     </Box>
                     </Box>  
                 </Hero>
-                
-
 <Box direction='row'
   justify='start'
   align='center'
@@ -71,54 +78,49 @@ class Replate extends Component {
   pad='medium'
   margin='small'
   colorIndex='light-2'
-  onClick={1}
-  onFocus={1}>
-  <Value value={1}
-    colorIndex='accent-1' />
-  <Box direction='row'
-    justify='start'
-    align='center'
-    wrap={true}
-    pad='medium'
-    margin='small'
-    colorIndex='light-1'
-    onClick={1}
-    onFocus={1}>
-    <Value value={2} />
-  </Box>
-  <Box direction='row'
-    justify='start'
-    align='center'
-    wrap={true}
-    pad='medium'
-    margin='small'
-    colorIndex='light-1'
-    onClick={1}
-    onFocus={1}>
-    <Value value={3} />
-  </Box>
-  <Box direction='row'
-    justify='start'
-    align='center'
-    wrap={true}
-    pad='medium'
-    margin='small'
-    colorIndex='light-1'
-    onClick={1}
-    onFocus={1}>
-    <Value value={4} />
-  </Box>
-  <Box direction='row'
-    justify='start'
-    align='center'
-    wrap={true}
-    pad='medium'
-    margin='small'
-    colorIndex='light-1'
-    onClick={1}
-    onFocus={1}>
-    <Value value={5} />
-  </Box>
+  
+  onClick={this.setState}
+  onFocus={handleClick}
+  flex='true'>
+
+  <Tabs>
+  <Tab title='Donate Food'>
+    <Paragraph>
+    <Card 
+  label='Donate Food'
+  heading='Sample Heading'
+  description='Sample description providing more details.' />
+    </Paragraph>
+    <input type='text'
+      value=''
+      onChange={handleClick} />
+  </Tab>
+  <Tab title='Donate Time'>
+    <Paragraph>
+    <Card 
+  label='Donate Time'
+  heading='Sample Heading'
+  description='Sample description providing more details.' />
+    </Paragraph>
+    <input type='text'
+      value=''
+      onChange={handleClick} />
+  </Tab>
+  <Tab title='Donate Money'>
+    <Paragraph>
+    <Card 
+  label='Donate Money'
+  heading='Sample Heading'
+  description='Sample description providing more details.' />
+    </Paragraph>
+    <input type='text'
+      value=''
+      onChange={handleClick} />
+  </Tab>
+</Tabs>
+  
+  
+  
 </Box>
 
 
@@ -139,13 +141,69 @@ class Replate extends Component {
                     onClick={console.log("insert dropdown function here")}
                     href='#' />
                 </Box>
+            {/* <Section pad='large'
+
+        {/* how this works section */}
+            <Section pad='large'
+                justify='center'
+                align='center'
+                colorIndex='grey-4'>
+                <Heading margin='none' align="start" size="medium" uppercase={true} truncate={true} strong={true}>
+                HOW THIS WORKS
+                </Heading>
+                <Paragraph align="center" size="large">
+                    How can we waste less food and feed more people?
+                </Paragraph>
+                <Box direction="row" justify="start" align="center" wrap={true} pad="small" margin="small">
+                <Box direction="row" wrap={false}>
+                <Meter 
+                    id='landfillMeter'
+                    type='circle'
+                    value={21}
+                    activeIndex={0}
+                    onActive={function (index){}}
+                    label={<Value value={21} units='%' size="medium" />}
+                    size=""/>
+                <Label labelFor='#landfillMeter' size="medium" > of landfill volume is food waste </Label>
+                </Box>
+                
+                <Box direction="row" wrap={false}>
+                <Meter 
+                    id='lbFoodMeter'
+                    type='circle'
+                    value={72}
+                    activeIndex={0}
+                    onActive={function (index){}}
+                    label={<Value value={72} units='Billion' size="small" />}
+                    size=""/>
+                <Label labelFor='#landfillMeter' size="medium"> pounds of food is wasted each year </Label>
+                </Box>
+                
+                <Box direction="row" wrap={false}>
+                <Meter 
+                    id='moneyMeter'
+                    type='circle'
+                    value={1}
+                    max={3}
+                    activeIndex={0}
+                    onActive={function (index){}}
+                    label={<Value value={1} units='in 3' size="medium" />}
+                    size=""/>
+                <Label labelFor='#landfillMeter' size="medium"> residents in Washington, D.C. is at risk of hunger.  </Label>
+                </Box>
+                
+                </Box>
+                <div id="aboutText" >
+                    Replate aims to connect those with excess food to those who are in need. We are targeting restaurants, grocery stores and farms and asking them to donate food that would be thrown out. 
+                    Volunters pick up this food and bring it to local food banks.
+                </div>
             </Section>
             <Section pad='large'
                 justify='center'
                 align='center'>
-                <Headline margin='none'>
-                Section 3
-                </Headline>
+                <Heading margin='none' align="start" size="medium" uppercase={true} truncate={true} strong={true}>
+                HELP US HELP OUR COMMUNITY
+                </Heading>
             </Section>
             <Section pad='large'
                 justify='center'
@@ -154,7 +212,7 @@ class Replate extends Component {
                 <Headline margin='none'>
                 Section 4
                 </Headline>
-            </Section>
+            </Section> */}
             <Section pad='large'
                 justify='center'
                 align='center'>
@@ -168,10 +226,13 @@ class Replate extends Component {
                 </Box>
 
 
+
                 </Headline>
             </Section>
-
-            
+                <Heading margin='none' align="start" size="medium" uppercase={true} truncate={true} strong={true}>
+                PARTNERED BUSINESSES
+                </Heading>
+            </Section>
             </Article>
 
 
