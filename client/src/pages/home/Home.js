@@ -92,9 +92,9 @@ class Replate extends Component {
                         <Heading margin='medium' justify='center' align='center' size="medium" uppercase={true} strong={true}>HELP US HELP OUR COMMUNITY</Heading>
                         <Box direction='row' justify='center' align='center' wrap={true} pad='medium' margin='small' colorIndex='light-2' onClick={this.setState} onFocus={handleClick} flex='true'>
                             <Tabs>
+
                                 {/* TAB 1: DONATE FOOD */}
                                 <Tab title='Donate Food'>
-
                                     <Box direction='row' justify='center' align='center' wrap={true} pad='medium' margin='small'>
                                         <Box wrap={false} margin='large' pad='large'>
                                             <Paragraph size='medium'>
@@ -121,6 +121,7 @@ class Replate extends Component {
                                         </Box>
                                     </Box>
                                 </Tab>
+
                                 {/* TAB 2: DONATE TIME */}
                                 <Tab title='Donate Time'>
                                     <Box direction='row' justify='center' align='center' wrap={true} pad='medium' margin='small'>
@@ -150,8 +151,8 @@ class Replate extends Component {
                                         </Box>
                                     </Box>
                                 </Tab>
-                                {/* TAB 3: DONATE MONEY */}
 
+                                {/* TAB 3: DONATE MONEY */}
                                 <Tab title='Donate Money'>
                                     <Paragraph>Coming soon...</Paragraph>
                                 </Tab>
