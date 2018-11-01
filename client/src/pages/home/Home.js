@@ -14,7 +14,7 @@ import CheckBox from 'grommet/components/CheckBox';
 import Meter from 'grommet/components/Meter';
 // import App from 'grommet/components/App';
 // import Menu from 'grommet/components/Menu';
-// import Anchor from 'grommet/components/Anchor';
+import Anchor from 'grommet/components/Anchor';
 import Image from 'grommet/components/Image';
 import Heading from 'grommet/components/Heading';
 import Headline from 'grommet/components/Headline';
@@ -28,6 +28,16 @@ import CafeteriaIcon from 'grommet/components/icons/base/Cafeteria';
 import FormNextLinkIcon from 'grommet/components/icons/base/FormNextLink';
 import CarIcon from 'grommet/components/icons/base/Car';
 import GroupIcon from 'grommet/components/icons/base/Group';
+import Footer from 'grommet/components/Footer';
+import Title from 'grommet/components/Title';
+import Menu from 'grommet/components/Menu';
+import SocialShare from 'grommet/components/SocialShare';
+import Carousel from 'grommet/components/Carousel';
+import SocialInstagramIcon from 'grommet/components/icons/base/SocialInstagram';
+import SocialGithubIcon from 'grommet/components/icons/base/SocialGithub';
+
+
+
 import React, { Component } from "react";
 import SocialShare from 'grommet/components/SocialShare';
 
@@ -77,18 +87,27 @@ class Replate extends Component {
                                 <Meter id='moneyMeter' type='circle' colorIndex="ok" value={1} max={3} activeIndex={0} onActive={function (index){}} label={<Value value={1} units='in 3' size="medium" />} size="small"/>
                                 <Label labelFor='#landfillMeter' size="medium"> residents in Washington, D.C. is at risk of hunger.</Label>
                             </Box>
-                            <div id="aboutText" truncate={true}>
-                                Replate aims to connect those with excess food to those who are in need. We are targeting restaurants, grocery stores and farms and asking them to donate food that would be thrown out. 
-                                Volunters pick up this food and bring it to local food banks.
-                                <br></br><br></br><br></br>
-                            </div>
-                            <Box direction='row' justify='center' align='center' >
-                                <CafeteriaIcon pad='medium' margin='small'color='brand' size='xlarge'/> 
-                                <FormNextLinkIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/> 
-                                <CarIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/>
-                                <FormNextLinkIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/>
-                                <GroupIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/>
-                            </Box>
+                        
+                        </Box>
+                        <div id="aboutText" truncate={true}>
+                           America has more than enough food to feed everyone. $218 billion worth of food is thrown away each year excluding 52 billion pounds of food from grocery stores, restaurants and manufacturers. 
+                        </div>
+                        <div id="aboutText" truncate={true}>
+                        National food industry, government agencies, environmental organizations agree to reducing food waste as a top priority for protecting the environment as astounding 21% of landfill volume is food waste.
+                        </div>
+                        <div id="aboutText" truncate={true}>
+                            Replate aims to connect those with excess food to those who are in need. We are targeting restaurants, grocery stores and farms and asking them to donate food that would be thrown out. 
+                            Volunters pick up this food and bring it to local food banks.
+                            <br></br><br></br><br></br>
+                        </div>
+                        
+
+                        <Box direction='row'>
+                             <CafeteriaIcon pad='medium' margin='small'color='brand' size='xlarge'/> 
+                             <FormNextLinkIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/> 
+                             <CarIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/>
+                             <FormNextLinkIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/>
+                             <GroupIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/>
                         </Box>
                         
                     </Section>
@@ -189,8 +208,65 @@ class Replate extends Component {
                     {/* partnered businesses section */}
                     <Section pad='large' colorIndex='grey-4' align="center" >
                         <Heading margin='medium' align="center" size="medium" uppercase={true} truncate={true} strong={true}>PARTNERED BUSINESSES</Heading>
-                        <Paragraph id="aboutText" align="center"> This is where we feature donating businesses</Paragraph>
-                    </Section>
+                        <Paragraph id="aboutText" align="center"><Carousel>
+                        <Image src='http://www.natashalandau.net/images/title_good_burger.png'/>
+                        <Image src='http://t2.rbxcdn.com/2ca42cc723e65da043f0c98dcddd1b0e'/>
+                        <Image src='http://kwikemartonline.com.au/wp-content/uploads/2018/03/final-approved-logo.png'/> 
+                       
+                        </Carousel></Paragraph>
+                        </Section>
+
+<Footer justify='between'
+  size='medium'>
+  <Title> 
+    <s/>
+     REPLATE
+  </Title>
+  <Box direction='row'
+    align='center'
+    pad={{"between": "large"}}>
+    <Paragraph margin='none'>
+      © 2018 REPLATE
+    </Paragraph>
+    <Menu direction='row'
+      size='medium'
+      dropAlign={{"left": "left"}}>
+      <Anchor href='#'>
+      <SocialShare link='replateDC@gmail.com'
+                    type='email'
+                    title='Sample Title'
+                    text='Sample text' />
+      </Anchor>
+      <Anchor href='#'>
+      <SocialShare type='facebook'
+                    link='https://www.facebook.com/replatefirst.replatelast' />
+      </Anchor>
+
+       <Anchor href='#'>
+      <SocialInstagramIcon type='instagram'
+                   link='https://www.instagram.com/replatedc/'
+                   text='Sample text'/>
+      </Anchor>
+
+      <Anchor href='#'>
+      <SocialShare type='google'
+                   link='https://grommet.io' />
+      </Anchor>
+      <Anchor href='#'>
+      <SocialShare type='twitter'
+                   link='https://twitter.com/ReplateDC18'
+                   text='Sample text' />
+      </Anchor>
+      <Anchor href='#'>
+      <SocialGithubIcon  type='github'
+                   link='https://github.com/pcfilicetti/replate/'
+                   text='Sample text' />
+      </Anchor>
+     
+    </Menu>
+  </Box>
+</Footer>
+
                 </Article>
             </div>
         );
