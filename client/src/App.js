@@ -12,19 +12,7 @@ import Replate from './pages/home'
 //   client_id: ''
 // }
 
-var { graphql, buildSchema } = require('graphql');
 
-var schema = buildSchema(
-  type Query {
-    hello: String
-  }
-);
-
-var root = { hello: () => 'Hello world!' };
-
-graphql(schema, '{ hello }', root).then((response) => {
-  console.log(response);
-});
 
 
 class App extends Component {
