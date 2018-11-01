@@ -75,9 +75,17 @@ class Replate extends Component {
                         
                         </Box>
                         <div id="aboutText" truncate={true}>
+                           America has more than enough food to feed everyone. $218 billion worth of food is thrown away each year excluding 52 billion pounds of food from grocery stores, restaurants and manufacturers. 
+                        </div>
+                        <div id="aboutText" truncate={true}>
+                        National food industry, government agencies, environmental organizations agree to reducing food waste as a top priority for protecting the environment as astounding 21% of landfill volume is food waste.
+                        </div>
+                        <div id="aboutText" truncate={true}>
                             Replate aims to connect those with excess food to those who are in need. We are targeting restaurants, grocery stores and farms and asking them to donate food that would be thrown out. 
                             Volunters pick up this food and bring it to local food banks.
                         </div>
+                        
+
                         <Box direction='row'>
                              <CafeteriaIcon pad='medium' margin='small'color='brand' size='xlarge'/> 
                              <FormNextLinkIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/> 
