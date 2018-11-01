@@ -13,7 +13,8 @@ const pickUpSchema = new Schema({
     time: { $dateToString: { format: "%mm-%dd-%yyyy", date: "$date"} },
     driverLicensedId: { type: String, default: "" },
     driverPhone: { type: String, default: "" },
-    delivered: { type: Boolean, default: false }
+    delivered: { type: Boolean, default: false },
+    dropOffAddress: { type: String, default: "" },
 });
 
 const PickUp = mongoose.model("pickUp", pickUpSchema);
