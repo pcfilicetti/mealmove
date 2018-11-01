@@ -12,7 +12,7 @@ import Button from 'grommet/components/Button';
 import Meter from 'grommet/components/Meter';
 // import App from 'grommet/components/App';
 // import Menu from 'grommet/components/Menu';
-// import Anchor from 'grommet/components/Anchor';
+import Anchor from 'grommet/components/Anchor';
 import Image from 'grommet/components/Image';
 import Heading from 'grommet/components/Heading';
 import Headline from 'grommet/components/Headline';
@@ -28,6 +28,16 @@ import FormNextLinkIcon from 'grommet/components/icons/base/FormNextLink';
 import CheckmarkIcon from 'grommet/components/icons/base/Checkmark';
 import CarIcon from 'grommet/components/icons/base/Car';
 import GroupIcon from 'grommet/components/icons/base/Group';
+import Footer from 'grommet/components/Footer';
+import Title from 'grommet/components/Title';
+import Menu from 'grommet/components/Menu';
+import SocialShare from 'grommet/components/SocialShare';
+import Carousel from 'grommet/components/Carousel';
+import SocialInstagramIcon from 'grommet/components/icons/base/SocialInstagram';
+import SocialGithubIcon from 'grommet/components/icons/base/SocialGithub';
+
+
+
 import React, { Component } from "react";
 
 // import API from "../../utils/API";
@@ -74,6 +84,8 @@ class Replate extends Component {
         return (
             <div>
                 <Article scrollStep={false}>
+
+
                     {/* hero page */}
                     <Hero background={<Image src="https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" fit='cover' full={true} />} backgroundColorIndex='light' size="large">
                         <Headline margin='none' align="center" size="large" uppercase='true' truncate='true'>REPLATE</Headline>
@@ -83,6 +95,8 @@ class Replate extends Component {
                             </Box>
                         </Box>  
                     </Hero>
+
+
 
                     {/* how this works section */}
                     <Section pad='large' justify="center" align="center" colorIndex='grey-4'>
@@ -105,9 +119,18 @@ class Replate extends Component {
                         
                         </Box>
                         <div id="aboutText" truncate='true'>
+                           America has more than enough food to feed everyone. $218 billion worth of food is thrown away each year excluding 52 billion pounds of food from grocery stores, restaurants and manufacturers. 
+                        </div>
+                        <div id="aboutText" truncate='true'>
+                        National food industry, government agencies, environmental organizations agree to reducing food waste as a top priority for protecting the environment as astounding 21% of landfill volume is food waste.
+                        </div>
+                        <div id="aboutText" truncate='true'>
                             Replate aims to connect those with excess food to those who are in need. We are targeting restaurants, grocery stores and farms and asking them to donate food that would be thrown out. 
                             Volunters pick up this food and bring it to local food banks.
+                            <br></br><br></br><br></br>
                         </div>
+                        
+
                         <Box direction='row'>
                              <CafeteriaIcon pad='medium' margin='small'color='brand' size='xlarge'/> 
                              <FormNextLinkIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/> 
@@ -116,6 +139,8 @@ class Replate extends Component {
                              <GroupIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/>
                         </Box>
                     </Section>
+
+
 
                     {/* signup form section */}
                     <Section pad='large' >
@@ -217,17 +242,92 @@ class Replate extends Component {
 
                                 {/* TAB 3: DONATE MONEY */}
                                 <Tab title='Donate Money'>
-                                    <Paragraph>Coming soon...</Paragraph>
+                                    <Box direction='column' justify='center' align='center' wrap={true} pad='medium' margin='small'>
+                                        <Box wrap={false} margin='small' pad='small'>
+                                            <Paragraph>
+                                            Are you looking for a way to help out your community without physically having to do any work? Look no further! YOUR COMMUNITY NEEDS YOUR HELP!
+                                                <br></br><br></br>
+                                            Here at Replate, you have the ability to donate money to our organization.  We are looking for any amount of donation that can help the organization grow.  The money would be used to help pay the pickup costs and website fee.  As part of the pickup costs, custom boxes will be made that will contain the packaged, donated food.
+                                            </Paragraph>
+                                        </Box>
+                                        <Box wrap={false} margin='none' pad='none'>
+                                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                            <input type="hidden" name="cmd" value="_s-xclick" />
+                                            <input type="hidden" name="hosted_button_id" value="WYQZD9KYZ3FL6" />
+                                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                                            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                                            </form>
+                                        </Box>
+                                    </Box>
                                 </Tab>
                             </Tabs>
                         </Box>
                     </Section>
 
+
+
                     {/* partnered businesses section */}
                     <Section pad='large' colorIndex='grey-4' align="center" >
                         <Heading margin='medium' align="center" size="medium" uppercase={true} truncate={true} strong={true}>PARTNERED BUSINESSES</Heading>
-                        <Paragraph id="aboutText" align="center"> This is where we feature donating businesses</Paragraph>
-                    </Section>
+                        <Paragraph id="aboutText" align="center"><Carousel>
+                        <Image src='http://www.natashalandau.net/images/title_good_burger.png'/>
+                        <Image src='http://t2.rbxcdn.com/2ca42cc723e65da043f0c98dcddd1b0e'/>
+                        <Image src='http://kwikemartonline.com.au/wp-content/uploads/2018/03/final-approved-logo.png'/> 
+                       
+                        </Carousel></Paragraph>
+                        </Section>
+
+<Footer justify='between'
+  size='medium'>
+  <Title> 
+    <s/>
+     REPLATE
+  </Title>
+  <Box direction='row'
+    align='center'
+    pad={{"between": "large"}}>
+    <Paragraph margin='none'>
+      © 2018 REPLATE
+    </Paragraph>
+    <Menu direction='row'
+      size='medium'
+      dropAlign={{"left": "left"}}>
+      <Anchor href='#'>
+      <SocialShare link='replateDC@gmail.com'
+                    type='email'
+                    title='Sample Title'
+                    text='Sample text' />
+      </Anchor>
+      <Anchor href='#'>
+      <SocialShare type='facebook'
+                    link='https://www.facebook.com/replatefirst.replatelast' />
+      </Anchor>
+
+       <Anchor href='#'>
+      <SocialInstagramIcon type='instagram'
+                   link='https://www.instagram.com/replatedc/'
+                   text='Sample text'/>
+      </Anchor>
+
+      <Anchor href='#'>
+      <SocialShare type='google'
+                   link='https://grommet.io' />
+      </Anchor>
+      <Anchor href='#'>
+      <SocialShare type='twitter'
+                   link='https://twitter.com/ReplateDC18'
+                   text='Sample text' />
+      </Anchor>
+      <Anchor href='#'>
+      <SocialGithubIcon  type='github'
+                   link='https://github.com/pcfilicetti/replate/'
+                   text='Sample text' />
+      </Anchor>
+     
+    </Menu>
+  </Box>
+</Footer>
+
                 </Article>
             </div>
         );
