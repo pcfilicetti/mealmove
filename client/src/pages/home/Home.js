@@ -33,6 +33,8 @@ import Title from 'grommet/components/Title';
 import Menu from 'grommet/components/Menu';
 import SocialShare from 'grommet/components/SocialShare';
 import Carousel from 'grommet/components/Carousel';
+import SocialInstagramIcon from 'grommet/components/icons/base/SocialInstagram';
+import SocialGithubIcon from 'grommet/components/icons/base/SocialGithub';
 
 
 
@@ -235,18 +237,30 @@ class Replate extends Component {
       </Anchor>
       <Anchor href='#'>
       <SocialShare type='facebook'
-                    link='https://grommet.io' />
+                    link='https://www.facebook.com/replatefirst.replatelast' />
       </Anchor>
-      
+
+       <Anchor href='#'>
+      <SocialInstagramIcon type='instagram'
+                   link='https://www.instagram.com/replatedc/'
+                   text='Sample text'/>
+      </Anchor>
+
       <Anchor href='#'>
       <SocialShare type='google'
                    link='https://grommet.io' />
       </Anchor>
       <Anchor href='#'>
       <SocialShare type='twitter'
-                   link='https://grommet.io'
+                   link='https://twitter.com/ReplateDC18'
                    text='Sample text' />
       </Anchor>
+      <Anchor href='#'>
+      <SocialGithubIcon  type='github'
+                   link='https://github.com/pcfilicetti/replate/'
+                   text='Sample text' />
+      </Anchor>
+     
     </Menu>
   </Box>
 </Footer>
