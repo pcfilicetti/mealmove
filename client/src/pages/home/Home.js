@@ -44,6 +44,8 @@ class Replate extends Component {
         return (
             <div>
                 <Article scrollStep={false}>
+
+
                     {/* hero page */}
                     <Hero background={<Image src="https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" fit='cover' full={true} />} backgroundColorIndex='light' size="large">
                         <Headline margin='none' align="center" size="large" uppercase={true} truncate={true}>REPLATE</Headline>
@@ -53,6 +55,8 @@ class Replate extends Component {
                             </Box>
                         </Box>  
                     </Hero>
+
+
 
                     {/* how this works section */}
                     <Section pad='large' justify="center" align="center" colorIndex='grey-4'>
@@ -77,6 +81,7 @@ class Replate extends Component {
                         <div id="aboutText" truncate={true}>
                             Replate aims to connect those with excess food to those who are in need. We are targeting restaurants, grocery stores and farms and asking them to donate food that would be thrown out. 
                             Volunters pick up this food and bring it to local food banks.
+                            <br></br><br></br><br></br>
                         </div>
                         <Box direction='row'>
                              <CafeteriaIcon pad='medium' margin='small'color='brand' size='xlarge'/> 
@@ -87,14 +92,16 @@ class Replate extends Component {
                         </Box>
                     </Section>
 
+
+
                     {/* signup form section */}
                     <Section pad='large' >
                         <Heading margin='medium' justify='center' align='center' size="medium" uppercase={true} strong={true}>HELP US HELP OUR COMMUNITY</Heading>
                         <Box direction='row' justify='center' align='center' wrap={true} pad='medium' margin='small' colorIndex='light-2' onClick={this.setState} onFocus={handleClick} flex='true'>
                             <Tabs>
+
                                 {/* TAB 1: DONATE FOOD */}
                                 <Tab title='Donate Food'>
-
                                     <Box direction='row' justify='center' align='center' wrap={true} pad='medium' margin='small'>
                                         <Box wrap={false} margin='large' pad='large'>
                                             <Paragraph size='medium'>
@@ -121,6 +128,7 @@ class Replate extends Component {
                                         </Box>
                                     </Box>
                                 </Tab>
+
                                 {/* TAB 2: DONATE TIME */}
                                 <Tab title='Donate Time'>
                                     <Box direction='row' justify='center' align='center' wrap={true} pad='medium' margin='small'>
@@ -150,14 +158,16 @@ class Replate extends Component {
                                         </Box>
                                     </Box>
                                 </Tab>
-                                {/* TAB 3: DONATE MONEY */}
 
+                                {/* TAB 3: DONATE MONEY */}
                                 <Tab title='Donate Money'>
                                     <Paragraph>Coming soon...</Paragraph>
                                 </Tab>
                             </Tabs>
                         </Box>
                     </Section>
+
+
 
                     {/* partnered businesses section */}
                     <Section pad='large' colorIndex='grey-4' align="center" >

@@ -20,7 +20,7 @@ class App extends Component {
       
 
       <Replate />
-      <Router>
+      {/* <Router>
         <Security issuer={config.issuer}
                   client_id={config.client_id}
                   redirect_uri={config.redirect_uri}
@@ -28,7 +28,7 @@ class App extends Component {
           <Route path='/' exact={true} component={Home}/>
           <Route path='/implicit/callback' component={ImplicitCallback}/>
         </Security>
-      </Router>
+      </Router> */}
 
 </div>
 
