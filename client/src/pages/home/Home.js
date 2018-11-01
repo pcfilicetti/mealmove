@@ -39,7 +39,6 @@ import SocialGithubIcon from 'grommet/components/icons/base/SocialGithub';
 
 
 import React, { Component } from "react";
-import SocialShare from 'grommet/components/SocialShare';
 
 function handleClick(e){
     e.preventDefault();
