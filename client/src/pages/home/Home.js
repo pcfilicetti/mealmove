@@ -269,65 +269,41 @@ class Replate extends Component {
                     {/* partnered businesses section */}
                     <Section pad='large' colorIndex='grey-4' align="center" >
                         <Heading margin='medium' align="center" size="medium" uppercase={true} truncate={true} strong={true}>PARTNERED BUSINESSES</Heading>
-                        <Paragraph id="aboutText" align="center"><Carousel>
-                        <Image src='http://www.natashalandau.net/images/title_good_burger.png'/>
-                        <Image src='http://t2.rbxcdn.com/2ca42cc723e65da043f0c98dcddd1b0e'/>
-                        <Image src='http://kwikemartonline.com.au/wp-content/uploads/2018/03/final-approved-logo.png'/> 
-                       
-                        </Carousel></Paragraph>
-                        </Section>
+                        <Paragraph id="aboutText" align="center">
+                            <Carousel>
+                                <Image src='http://www.natashalandau.net/images/title_good_burger.png'/>
+                                <Image src='http://t2.rbxcdn.com/2ca42cc723e65da043f0c98dcddd1b0e'/>
+                                <Image src='http://kwikemartonline.com.au/wp-content/uploads/2018/03/final-approved-logo.png'/> 
+                            </Carousel>
+                        </Paragraph>
+                    </Section>
 
-<Footer justify='between'
-  size='medium'>
-  <Title> 
-    <s/>
-     REPLATE
-  </Title>
-  <Box direction='row'
-    align='center'
-    pad={{"between": "large"}}>
-    <Paragraph margin='none'>
-      © 2018 REPLATE
-    </Paragraph>
-    <Menu direction='row'
-      size='medium'
-      dropAlign={{"left": "left"}}>
-      <Anchor href='#'>
-      <SocialShare link='replateDC@gmail.com'
-                    type='email'
-                    title='Sample Title'
-                    text='Sample text' />
-      </Anchor>
-      <Anchor href='#'>
-      <SocialShare type='facebook'
-                    link='https://www.facebook.com/replatefirst.replatelast' />
-      </Anchor>
-
-       <Anchor href='#'>
-      <SocialInstagramIcon type='instagram'
-                   link='https://www.instagram.com/replatedc/'
-                   text='Sample text'/>
-      </Anchor>
-
-      <Anchor href='#'>
-      <SocialShare type='google'
-                   link='https://grommet.io' />
-      </Anchor>
-      <Anchor href='#'>
-      <SocialShare type='twitter'
-                   link='https://twitter.com/ReplateDC18'
-                   text='Sample text' />
-      </Anchor>
-      <Anchor href='#'>
-      <SocialGithubIcon  type='github'
-                   link='https://github.com/pcfilicetti/replate/'
-                   text='Sample text' />
-      </Anchor>
-     
-    </Menu>
-  </Box>
-</Footer>
-
+                    <Footer justify='between' size='medium'>
+                        <Title><s/><s/>REPLATE</Title>
+                        <Box direction='row' align='center' pad={{"between": "large"}}>
+                            <Paragraph margin='none'>REPLATE © 2018</Paragraph>
+                            <Menu direction='row' size='medium' dropAlign={{"left": "left"}}>
+                                <Anchor href='#'>
+                                    <SocialShare link='replateDC@gmail.com' type='email' title='Sample Title' text='Sample text' />
+                                </Anchor>
+                                <Anchor href='#'>
+                                    <SocialShare type='facebook' link='https://www.facebook.com/Replatedc-2302465493116923/?modal=admin_todo_tour' />
+                                </Anchor>
+                                <Anchor href='#'>
+                                    <SocialInstagramIcon type='instagram' link='https://www.instagram.com/replatedc/' text='Sample text'/>
+                                </Anchor>
+                                <Anchor href='#'>
+                                    <SocialShare type='google' link='https://grommet.io' />
+                                </Anchor>
+                                <Anchor href='#'>
+                                    <SocialShare type='twitter' link='https://twitter.com/ReplateDC18' text='Sample text' />
+                                </Anchor>
+                                <Anchor href='#'>
+                                    <SocialGithubIcon  type='github' link='https://github.com/pcfilicetti/replate/' text='Sample text' />
+                                </Anchor>
+                            </Menu>
+                        </Box>
+                    </Footer>
                 </Article>
             </div>
         );
