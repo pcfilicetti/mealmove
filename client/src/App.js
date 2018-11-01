@@ -15,18 +15,7 @@ import Replate from './pages/home'
 class App extends Component {
   render() {
     return (
-      <div>
       <Replate />
-      {/* <Router>
-        <Security issuer={config.issuer}
-                  client_id={config.client_id}
-                  redirect_uri={config.redirect_uri}
-        >
-          <Route path='/' exact={true} component={Home}/>
-          <Route path='/implicit/callback' component={ImplicitCallback}/>
-        </Security>
-      </Router> */}
-      </div>
     );
   }
 }
