@@ -14,7 +14,7 @@ import CheckBox from 'grommet/components/CheckBox';
 import Meter from 'grommet/components/Meter';
 // import App from 'grommet/components/App';
 // import Menu from 'grommet/components/Menu';
-// import Anchor from 'grommet/components/Anchor';
+import Anchor from 'grommet/components/Anchor';
 import Image from 'grommet/components/Image';
 import Heading from 'grommet/components/Heading';
 import Headline from 'grommet/components/Headline';
@@ -28,6 +28,14 @@ import CafeteriaIcon from 'grommet/components/icons/base/Cafeteria';
 import FormNextLinkIcon from 'grommet/components/icons/base/FormNextLink';
 import CarIcon from 'grommet/components/icons/base/Car';
 import GroupIcon from 'grommet/components/icons/base/Group';
+import Footer from 'grommet/components/Footer';
+import Title from 'grommet/components/Title';
+import Menu from 'grommet/components/Menu';
+import SocialShare from 'grommet/components/SocialShare';
+import Carousel from 'grommet/components/Carousel';
+
+
+
 import React, { Component } from "react";
 
 function handleClick(e){
@@ -171,8 +179,53 @@ class Replate extends Component {
                     {/* partnered businesses section */}
                     <Section pad='large' colorIndex='grey-4' align="center" >
                         <Heading margin='medium' align="center" size="medium" uppercase={true} truncate={true} strong={true}>PARTNERED BUSINESSES</Heading>
-                        <Paragraph id="aboutText" align="center"> This is where we feature donating businesses</Paragraph>
-                    </Section>
+                        <Paragraph id="aboutText" align="center"><Carousel>
+                        <Image src='http://www.natashalandau.net/images/title_good_burger.png'/>
+                        <Image src='http://t2.rbxcdn.com/2ca42cc723e65da043f0c98dcddd1b0e'/>
+                        <Image src='http://kwikemartonline.com.au/wp-content/uploads/2018/03/final-approved-logo.png'/> 
+                       
+                        </Carousel></Paragraph>
+                        </Section>
+
+<Footer justify='between'
+  size='medium'>
+  <Title> 
+    <s/>
+     REPLATE
+  </Title>
+  <Box direction='row'
+    align='center'
+    pad={{"between": "large"}}>
+    <Paragraph margin='none'>
+      © 2018 REPLATE
+    </Paragraph>
+    <Menu direction='row'
+      size='medium'
+      dropAlign={{"left": "left"}}>
+      <Anchor href='#'>
+      <SocialShare link='replateDC@gmail.com'
+                    type='email'
+                    title='Sample Title'
+                    text='Sample text' />
+      </Anchor>
+      <Anchor href='#'>
+      <SocialShare type='facebook'
+                    link='https://grommet.io' />
+      </Anchor>
+      
+      <Anchor href='#'>
+      <SocialShare type='google'
+                   link='https://grommet.io' />
+      </Anchor>
+      <Anchor href='#'>
+      <SocialShare type='twitter'
+                   link='https://grommet.io'
+                   text='Sample text' />
+      </Anchor>
+    </Menu>
+  </Box>
+</Footer>
+
                 </Article>
             </div>
         );
