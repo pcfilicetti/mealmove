@@ -280,7 +280,6 @@ class Replate extends Component {
 <Footer justify='between'
   size='medium'>
   <Title> 
-    <s/>
      REPLATE
   </Title>
   <Box direction='row'
@@ -292,18 +291,18 @@ class Replate extends Component {
     <Menu direction='row'
       size='medium'
       dropAlign={{"left": "left"}}>
-      <Anchor href='#'>
+      <Anchor href='replateDC@gmail.com'>
       <SocialShare link='replateDC@gmail.com'
                     type='email'
                     title='Sample Title'
                     text='Sample text' />
       </Anchor>
-      <Anchor href='#'>
+      <Anchor href='https://www.facebook.com/Replatedc-2302465493116923/?modal=admin_todo_tour '>
       <SocialShare type='facebook'
-                    link='https://www.facebook.com/replatefirst.replatelast' />
+                    link='https://www.facebook.com/Replatedc-2302465493116923/?modal=admin_todo_tour' />
       </Anchor>
 
-       <Anchor href='#'>
+       <Anchor href='#https://www.instagram.com/replatedc/'>
       <SocialInstagramIcon type='instagram'
                    link='https://www.instagram.com/replatedc/'
                    text='Sample text'/>
@@ -313,12 +312,12 @@ class Replate extends Component {
       <SocialShare type='google'
                    link='https://grommet.io' />
       </Anchor>
-      <Anchor href='#'>
+      <Anchor href='https://twitter.com/ReplateDC18'>
       <SocialShare type='twitter'
                    link='https://twitter.com/ReplateDC18'
                    text='Sample text' />
       </Anchor>
-      <Anchor href='#'>
+      <Anchor href='https://github.com/pcfilicetti/replate/'>
       <SocialGithubIcon  type='github'
                    link='https://github.com/pcfilicetti/replate/'
                    text='Sample text' />
