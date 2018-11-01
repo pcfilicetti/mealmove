@@ -1,7 +1,13 @@
-const express = require("express");
-const path = require("path");
+import express from 'express';
+import path from 'path';
+import mongoose from 'mongoose';
 const PORT = process.env.PORT || 3001;
 const app = express();
+
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/pickups';
+
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
