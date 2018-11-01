@@ -161,7 +161,23 @@ class Replate extends Component {
 
                                 {/* TAB 3: DONATE MONEY */}
                                 <Tab title='Donate Money'>
-                                    <Paragraph>Coming soon...</Paragraph>
+                                    <Box direction='column' justify='center' align='center' wrap={true} pad='medium' margin='small'>
+                                        <Box wrap={false} margin='small' pad='small'>
+                                            <Paragraph>
+                                            Are you looking for a way to help out your community without physically having to do any work? Look no further! YOUR COMMUNITY NEEDS YOUR HELP!
+                                                <br></br><br></br>
+                                            Here at Replate, you have the ability to donate money to our organization.  We are looking for any amount of donation that can help the organization grow.  The money would be used to help pay the pickup costs and website fee.  As part of the pickup costs, custom boxes will be made that will contain the packaged, donated food.
+                                            </Paragraph>
+                                        </Box>
+                                        <Box wrap={false} margin='none' pad='none'>
+                                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                            <input type="hidden" name="cmd" value="_s-xclick" />
+                                            <input type="hidden" name="hosted_button_id" value="WYQZD9KYZ3FL6" />
+                                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                                            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                                            </form>
+                                        </Box>
+                                    </Box>
                                 </Tab>
                             </Tabs>
                         </Box>
