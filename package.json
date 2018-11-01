@@ -5,6 +5,7 @@
   "dependencies": {
     "@okta/okta-react": "^1.1.4",
     "express": "^4.16.3",
+    "graphql": "^14.0.2",
     "grommet": "^1.11.0",
     "grommet-addons": "^0.6.0",
     "grommet-css": "^1.6.0",
