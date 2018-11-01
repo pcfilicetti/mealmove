@@ -44,6 +44,8 @@ class Replate extends Component {
         return (
             <div>
                 <Article scrollStep={false}>
+
+
                     {/* hero page */}
                     <Hero background={<Image src="https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" fit='cover' full={true} />} backgroundColorIndex='light' size="large">
                         <Headline margin='none' align="center" size="large" uppercase={true} truncate={true}>REPLATE</Headline>
@@ -53,6 +55,8 @@ class Replate extends Component {
                             </Box>
                         </Box>  
                     </Hero>
+
+
 
                     {/* how this works section */}
                     <Section pad='large' justify="center" align="center" colorIndex='grey-4'>
@@ -83,6 +87,7 @@ class Replate extends Component {
                         <div id="aboutText" truncate={true}>
                             Replate aims to connect those with excess food to those who are in need. We are targeting restaurants, grocery stores and farms and asking them to donate food that would be thrown out. 
                             Volunters pick up this food and bring it to local food banks.
+                            <br></br><br></br><br></br>
                         </div>
                         
 
@@ -94,6 +99,8 @@ class Replate extends Component {
                              <GroupIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/>
                         </Box>
                     </Section>
+
+
 
                     {/* signup form section */}
                     <Section pad='large' >
@@ -162,11 +169,29 @@ class Replate extends Component {
 
                                 {/* TAB 3: DONATE MONEY */}
                                 <Tab title='Donate Money'>
-                                    <Paragraph>Coming soon...</Paragraph>
+                                    <Box direction='column' justify='center' align='center' wrap={true} pad='medium' margin='small'>
+                                        <Box wrap={false} margin='small' pad='small'>
+                                            <Paragraph>
+                                            Are you looking for a way to help out your community without physically having to do any work? Look no further! YOUR COMMUNITY NEEDS YOUR HELP!
+                                                <br></br><br></br>
+                                            Here at Replate, you have the ability to donate money to our organization.  We are looking for any amount of donation that can help the organization grow.  The money would be used to help pay the pickup costs and website fee.  As part of the pickup costs, custom boxes will be made that will contain the packaged, donated food.
+                                            </Paragraph>
+                                        </Box>
+                                        <Box wrap={false} margin='none' pad='none'>
+                                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                            <input type="hidden" name="cmd" value="_s-xclick" />
+                                            <input type="hidden" name="hosted_button_id" value="WYQZD9KYZ3FL6" />
+                                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                                            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                                            </form>
+                                        </Box>
+                                    </Box>
                                 </Tab>
                             </Tabs>
                         </Box>
                     </Section>
+
+
 
                     {/* partnered businesses section */}
                     <Section pad='large' colorIndex='grey-4' align="center" >
