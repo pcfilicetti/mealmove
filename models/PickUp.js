@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const pickUpSchema = new Schema({
@@ -17,6 +17,4 @@ const pickUpSchema = new Schema({
     dropOffAddress: { type: String, default: "" },
 });
 
-const PickUp = mongoose.model("pickUp", pickUpSchema);
-
-module.exports = PickUp;
+const db = module.exports = mongoose.model('pickup', pickUpSchema)
