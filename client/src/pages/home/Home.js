@@ -123,8 +123,8 @@ class Replate extends Component {
 
 
                     {/* hero page */}
-                    <Hero background={<Image src="https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" fit='cover' full={true} />} backgroundColorIndex='light' size="large">
-                        <Headline margin='none' align="center" size="large" uppercase='true' truncate='true'>REPLATE</Headline>
+                    <Hero background={<Image alt='bread and greens on a wood table' src="https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" fit='cover' full={true} />} backgroundColorIndex='light' size="large">
+                        <Headline margin='none' align="center" size="large" uppercase={true} truncate={true}>REPLATE</Headline>
                         <Box direction='row' justify='center' align='center'>
                             <Box basis='1/2' align='end' pad='medium' />
                             <Box basis='1/2' align='start' pad='medium'>
@@ -136,21 +136,21 @@ class Replate extends Component {
 
                     {/* how this works section */}
                     <Section pad='large' justify="center" align="center" colorIndex='grey-4'>
-                        <Heading margin='large' align="center" size="medium" strong={true}>How can we waste less food and feed more people?</Heading>
-                        <Box direction="row" justify="center" align="center" wrap={true} pad="small" margin="small">
+                        <Heading  margin='large' align="center" size="medium" strong={true}>How can we waste less food and feed more people?</Heading>
+                        <Box direction="row"  justify="center" align="center" wrap={true} pad="small" margin="small">
                             <Box direction="row" wrap={false}>
-                                <Meter id='landfillMeter' type='circle' value={21} activeIndex={0} onActive={function (index){}} label={<Value value={21} units='%' size="medium" />} size="small"/>
+                                <Meter id='landfillMeter' type='circle' colorIndex="ok" value={21} activeIndex={0} onActive={function (index){}} label={<Value value={21} units='%' size="medium" />} size="small"/>
                                 <Label labelFor='#landfillMeter' size="medium" > of landfill volume is food waste.</Label>
                             </Box>
                             
                             <Box direction="row" wrap={false}>
-                                <Meter id='lbFoodMeter' type='circle' value={72} activeIndex={0} onActive={function (index){}} label={<Value value={72} units='Billion' size="small" />} size="small"/>
-                                <Label labelFor='#landfillMeter' size="medium"> pounds of food are wasted each year.</Label>
-                            </Box>
-                        
-                            <Box direction="row" wrap={false}>
-                                <Meter id='moneyMeter' type='circle' value={1} max={3} activeIndex={0} onActive={function (index){}} label={<Value value={1} units='in 3' size="medium" />} size="small"/>
+                                <Meter id='moneyMeter' type='circle' colorIndex="ok" value={1} max={3} activeIndex={0} onActive={function (index){}} label={<Value value={1} units='in 3' size="medium" />} size="small"/>
                                 <Label labelFor='#landfillMeter' size="medium"> residents in Washington, D.C. is at risk of hunger.</Label>
+                            </Box>
+
+                            <Box direction="row" wrap={false}>
+                                <Meter id='lbFoodMeter' type='circle' colorIndex="ok" value={72} activeIndex={0} onActive={function (index){}} label={<Value value={72} units='Billion' size="small" />} size="small"/>
+                                <Label labelFor='#landfillMeter' size="medium"> pounds of food are wasted each year.</Label>
                             </Box>
                         
                         </Box>
@@ -175,6 +175,7 @@ class Replate extends Component {
                              <FormNextLinkIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/>
                              <GroupIcon pad='medium' margin='small' color= 'plain' size ='xlarge'/>
                         </Box>
+                        
                     </Section>
 
                     {/* signup form section */}
@@ -288,7 +289,7 @@ class Replate extends Component {
                                             <input type="hidden" name="cmd" value="_s-xclick" />
                                             <input type="hidden" name="hosted_button_id" value="WYQZD9KYZ3FL6" />
                                             <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-                                            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                                            <img alt="donate button" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
                                             </form>
                                         </Box>
                                     </Box>
