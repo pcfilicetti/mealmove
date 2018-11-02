@@ -286,19 +286,19 @@ class Replate extends Component {
                                 <Anchor href='#'>
                                     <SocialShare link='replateDC@gmail.com' type='email' title='Sample Title' text='Sample text' />
                                 </Anchor>
-                                <Anchor href='#'>
+                                <Anchor href='https://www.facebook.com/Replatedc-2302465493116923/?modal=admin_todo_tour'>
                                     <SocialShare type='facebook' link='https://www.facebook.com/Replatedc-2302465493116923/?modal=admin_todo_tour' />
                                 </Anchor>
-                                <Anchor href='#'>
+                                <Anchor href='https://www.instagram.com/replatedc/'>
                                     <SocialInstagramIcon type='instagram' link='https://www.instagram.com/replatedc/' text='Sample text'/>
                                 </Anchor>
                                 <Anchor href='#'>
                                     <SocialShare type='google' link='https://grommet.io' />
                                 </Anchor>
-                                <Anchor href='#'>
+                                <Anchor href='https://twitter.com/ReplateDC18'>
                                     <SocialShare type='twitter' link='https://twitter.com/ReplateDC18' text='Sample text' />
                                 </Anchor>
-                                <Anchor href='#'>
+                                <Anchor href='https://github.com/pcfilicetti/replate/'>
                                     <SocialGithubIcon  type='github' link='https://github.com/pcfilicetti/replate/' text='Sample text' />
                                 </Anchor>
                             </Menu>
