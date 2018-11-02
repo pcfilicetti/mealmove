@@ -17,7 +17,6 @@ import Image from 'grommet/components/Image';
 import Heading from 'grommet/components/Heading';
 import Headline from 'grommet/components/Headline';
 import Value from 'grommet/components/Value';
-import DateTime from 'grommet/components/DateTime';
 // import Card from 'grommet/components/Card';
 import Paragraph from 'grommet/components/Paragraph';
 import Tabs from 'grommet/components/Tabs';
@@ -35,12 +34,11 @@ import SocialShare from 'grommet/components/SocialShare';
 import Carousel from 'grommet/components/Carousel';
 import SocialInstagramIcon from 'grommet/components/icons/base/SocialInstagram';
 import SocialGithubIcon from 'grommet/components/icons/base/SocialGithub';
-
-
+import List from 'grommet/components/List';
+import ListItem from 'grommet/components/ListItem';
 
 import React, { Component } from "react";
-
-// import API from "../../utils/API";
+import API from "../../utils/API";
 
 class Replate extends Component {
     state = {
@@ -50,12 +48,26 @@ class Replate extends Component {
         emailPref: false,
         phonePref: false,
         address: '',
-        foodType: '',
-        weekDay: '',
+        foodType: 'Prepared Foods',
+        weekDay: 'Sunday',
         time: '',
         driverLicenseId: '',
         driverPhone: '',
-        delivered: false
+        delivered: false,
+        pickups: []
+    };
+
+    componentDidMount() {
+        this.loadPickups();
+    };
+
+    loadPickups = () => {
+        API.getPickups()
+            .then(res => {
+                console.log(res.data);
+                this.setState({ pickups: res.data })
+            })
+            .catch(err => console.log(err));
     };
 
     handleClick = (event) => {
@@ -69,6 +81,13 @@ class Replate extends Component {
         });
     };
 
+    handleSelectChange = (event) => {
+        const { id, value } = event.target;
+        this.setState({
+            [id]: value
+        });
+    };
+
     handleCheckboxChange = (event) => {
         const { name, checked } = event.target;
         this.setState({
@@ -78,6 +97,23 @@ class Replate extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        if (this.state.establishment && this.state.email && this.state.phoneNumber && (this.state.emailPref || this.state.phonePref) && this.state.address && this.state.foodType && this.state.weekDay && this.state.time) {
+        API.savePickup({
+            establishment: this.state.establishment,
+            email: this.state.email,
+            phoneNumber: this.state.phoneNumber,
+            emailPref: this.state.emailPref,
+            phonePref: this.state.phonePref,
+            address: this.state.address,
+            foodType: this.state.foodType,
+            weekDay: this.state.weekDay,
+            time: this.state.time
+        })
+            .then(res => this.loadPickups())
+            .catch(err => console.log(err));
+            console.log('should have posted');
+        }
+        console.log(this.state)
     }
 
     render () {
@@ -118,18 +154,19 @@ class Replate extends Component {
                             </Box>
                         
                         </Box>
-                        <div id="aboutText" truncate='true'>
-                           America has more than enough food to feed everyone. $218 billion worth of food is thrown away each year excluding 52 billion pounds of food from grocery stores, restaurants and manufacturers. 
-                        </div>
-                        <div id="aboutText" truncate='true'>
-                        National food industry, government agencies, environmental organizations agree to reducing food waste as a top priority for protecting the environment as astounding 21% of landfill volume is food waste.
-                        </div>
-                        <div id="aboutText" truncate='true'>
-                            Replate aims to connect those with excess food to those who are in need. We are targeting restaurants, grocery stores and farms and asking them to donate food that would be thrown out. 
-                            Volunters pick up this food and bring it to local food banks.
-                            <br></br><br></br><br></br>
-                        </div>
-                        
+                        <Box direction="row" wrap={false}>
+                            <p id="aboutText" truncate='true'>
+                            America has more than enough food to feed everyone. $218 billion worth of food is thrown away each year excluding 52 billion pounds of food from grocery stores, restaurants and manufacturers. 
+                            </p>
+                            <p id="aboutText" truncate='true'>
+                            National food industry, government agencies, environmental organizations agree to reducing food waste as a top priority for protecting the environment as astounding 21% of landfill volume is food waste.
+                            </p>
+                            <p id="aboutText" truncate='true'>
+                                Replate aims to connect those with excess food to those who are in need. We are targeting restaurants, grocery stores and farms and asking them to donate food that would be thrown out. 
+                                Volunters pick up this food and bring it to local food banks.
+                                <br></br><br></br><br></br>
+                            </p>
+                        </Box>
 
                         <Box direction='row'>
                              <CafeteriaIcon pad='medium' margin='small'color='brand' size='xlarge'/> 
@@ -140,12 +177,10 @@ class Replate extends Component {
                         </Box>
                     </Section>
 
-
-
                     {/* signup form section */}
                     <Section pad='large' >
                         <Heading margin='medium' justify='center' align='center' size="medium" uppercase={true} strong={true}>HELP US HELP OUR COMMUNITY</Heading>
-                        <Box direction='row' justify='center' align='center' wrap={true} pad='medium' margin='small' colorIndex='light-2' onClick={this.setState} onFocus={this.handleClick} flex={true}>
+                        <Box direction='row' justify='center' align='center' wrap={true} pad='medium' margin='small' colorIndex='light-2' onFocus={this.handleClick} flex={true}>
                             <Tabs>
 
                                 {/* TAB 1: DONATE FOOD */}
@@ -167,7 +202,7 @@ class Replate extends Component {
                                                     <TextInput name='establishment' onDOMChange={this.handleFormChange} value={this.state.establishment} />
                                                 </FormField>
                                                 <FormField label='Email Address'>
-                                                    <TextInput name='emailAddress' onDOMChange={this.handleFormChange} value={this.state.emailAddress} />
+                                                    <TextInput name='email' onDOMChange={this.handleFormChange} value={this.state.email} />
                                                 </FormField>
                                                 <FormField label='Phone Number'>
                                                     <TextInput name='phoneNumber' onDOMChange={this.handleFormChange} value={this.state.phoneNumber} />
@@ -180,18 +215,16 @@ class Replate extends Component {
                                                     <TextInput name='address' onDOMChange={this.handleFormChange} value={this.state.address} />
                                                 </FormField>
                                                 <FormField label='Food Type'>
-                                                    <select name='foodType' value={this.state.foodType} onChange={this.handleFormChange}>
-                                                        <option selected disabled>Select a food type...</option>
-                                                        <option value='Prepared Foods'>Prepared Foods</option>
+                                                    <select id='foodType' value={this.state.foodType} onChange={this.handleSelectChange}>
+                                                        <option defaultValue value='Prepared Foods'>Prepared Foods</option>
                                                         <option value='Non-Perishable'>Non-Perishable</option>
                                                         <option value='Semi-Perishable'>Semi-Perishable</option>
                                                         <option value='Perishable'>Perishable</option>
                                                     </select>
                                                 </FormField>
                                                 <FormField label='Week Day for Pickup'>
-                                                    <select name='weekDay' value={this.state.weekDay} onChange={this.handleFormChange}>
-                                                        <option selected disabled>Select a week day...</option>
-                                                        <option value='Sunday'>Sunday</option>
+                                                    <select id='weekDay' value={this.state.weekDay} onChange={this.handleSelectChange}>
+                                                        <option defaultValue value='Sunday'>Sunday</option>
                                                         <option value='Monday'>Monday</option>
                                                         <option value='Tuesday'>Tuesday</option>
                                                         <option value='Wednesday'>Wednesday</option>
@@ -201,7 +234,7 @@ class Replate extends Component {
                                                     </select>
                                                 </FormField>
                                                 <FormField label='Time for Pickup (24-Hour Clock)'>
-                                                    <DateTime name='time' value={this.state.time} format='HH:mm' onDOMChange={this.handleFormChange} />
+                                                    <TextInput name='time' value={this.state.time} onDOMChange={this.handleFormChange} />
                                                 </FormField>
                                                 <br />
                                                 <Button type='submit' icon={<CheckmarkIcon />} label='Submit Pickup' onClick={this.handleSubmit} plain={false} accent={true} />
@@ -225,17 +258,17 @@ class Replate extends Component {
                                             </Paragraph>
                                         </Box>
                                         <Box wrap={false} margin='small'>
-                                            <Form>
-                                                <FormField label='Name'>
-                                                    <TextInput />
-                                                </FormField>
-                                                <FormField label='email'>
-                                                    <TextInput />
-                                                </FormField>
-                                                <FormField label='Phone'>
-                                                    <TextInput />
-                                                </FormField>
-                                            </Form>
+                                            {this.state.pickups.length ? (
+                                                <List>
+                                                    {this.state.pickups.map(pickup => (
+                                                    <ListItem key={pickup._id}>
+                                                        {pickup.establishment}
+                                                    </ListItem>
+                                                    ))}
+                                                </List>
+                                            ) : (
+                                                <h3>No Results to Display</h3>
+                                            )}
                                         </Box>
                                     </Box>
                                 </Tab>
@@ -245,9 +278,9 @@ class Replate extends Component {
                                     <Box direction='column' justify='center' align='center' wrap={true} pad='medium' margin='small'>
                                         <Box wrap={false} margin='small' pad='small'>
                                             <Paragraph>
-                                            Are you looking for a way to help out your community without physically having to do any work? Look no further! YOUR COMMUNITY NEEDS YOUR HELP!
+                                                Are you looking for a way to help out your community without physically having to do any work? Look no further! YOUR COMMUNITY NEEDS YOUR HELP!
                                                 <br></br><br></br>
-                                            Here at Replate, you have the ability to donate money to our organization.  We are looking for any amount of donation that can help the organization grow.  The money would be used to help pay the pickup costs and website fee.  As part of the pickup costs, custom boxes will be made that will contain the packaged, donated food.
+                                                Here at Replate, you have the ability to donate money to our organization.  We are looking for any amount of donation that can help the organization grow.  The money would be used to help pay the pickup costs and website fee.  As part of the pickup costs, custom boxes will be made that will contain the packaged, donated food.
                                             </Paragraph>
                                         </Box>
                                         <Box wrap={false} margin='none' pad='none'>

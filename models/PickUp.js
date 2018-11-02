@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const pickUpSchema = new Schema({
@@ -10,11 +10,13 @@ const pickUpSchema = new Schema({
     address: { type: String, required: true },
     foodType: { type: String, required: true },
     weekDay: { type: String, required: true },
-    time: { $dateToString: { format: "%mm-%dd-%yyyy", date: "$date"} },
+    time: { type: String, required: true },
     driverLicensedId: { type: String, default: "" },
     driverPhone: { type: String, default: "" },
     delivered: { type: Boolean, default: false },
     dropOffAddress: { type: String, default: "" },
 });
 
-const db = module.exports = mongoose.model('pickup', pickUpSchema)
+const Pickup = mongoose.model('Pickup', pickUpSchema);
+
+module.exports = Pickup;
