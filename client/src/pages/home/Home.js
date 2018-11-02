@@ -108,13 +108,13 @@ class Replate extends Component {
                             </Box>
                             
                             <Box direction="row" wrap={false}>
-                                <Meter id='lbFoodMeter' type='circle' colorIndex="ok" value={72} activeIndex={0} onActive={function (index){}} label={<Value value={72} units='Billion' size="small" />} size="small"/>
-                                <Label labelFor='#landfillMeter' size="medium"> pounds of food are wasted each year.</Label>
-                            </Box>
-                        
-                            <Box direction="row" wrap={false}>
                                 <Meter id='moneyMeter' type='circle' colorIndex="ok" value={1} max={3} activeIndex={0} onActive={function (index){}} label={<Value value={1} units='in 3' size="medium" />} size="small"/>
                                 <Label labelFor='#landfillMeter' size="medium"> residents in Washington, D.C. is at risk of hunger.</Label>
+                            </Box>
+                            
+                            <Box direction="row" wrap={false}>
+                                <Meter id='lbFoodMeter' type='circle' colorIndex="ok" value={72} activeIndex={0} onActive={function (index){}} label={<Value value={72} units='Billion' size="small" />} size="small"/>
+                                <Label labelFor='#landfillMeter' size="medium"> pounds of food are wasted each year.</Label>
                             </Box>
                         
                         </Box>
@@ -280,8 +280,7 @@ class Replate extends Component {
 
 <Footer justify='between'
   size='medium'>
-  <Title> 
-    <s/>
+  <Title pad='small'>
      REPLATE
   </Title>
   <Box direction='row'
