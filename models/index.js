@@ -1,3 +1,3 @@
 module.exports = {
-    Pickup: require("./Pickup.js")
+    Pickup: require("./Pickup")
   };
