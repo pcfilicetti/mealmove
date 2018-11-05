@@ -1,4 +1,4 @@
 module.exports = {
-    Book: require("./Pickup")
+    Pickup: require("./Pickup")
   };
   
