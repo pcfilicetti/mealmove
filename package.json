@@ -37,6 +37,7 @@
     "client": "cd client && npm run start",
     "seed": "node scripts/seedDB.js",
     "install": "cd client && yarn install",
+    "prestart": "next build",
     "build": "cd client && yarn build",
     "heroku-postbuild": "yarn build"
   },
