@@ -10,10 +10,7 @@ var graphqlHTTP = require('express-graphql');
 var { buildSchema } = require('graphql');
 // const routes = require('./src/routes');
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/pickups';
-
-mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/pickups');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -53,8 +50,3 @@ app.use(routes);
 app.listen(8001, () => {
   console.log('Express GraphQL Server Now Running On localhost:3000/graphql')
 });
- 
-    
-    
-//     `🌎 ==> Server now on port ${PORT}!`);
-// });
