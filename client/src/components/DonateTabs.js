@@ -45,6 +45,18 @@ class DonateTabs extends React.Component {
             .catch(err => console.log(err));
     };
 
+    checkContact = (item) => {
+        if (item.emailPref && item.phonePref) {
+            return `${item.establishment}'s Contact Information: ${item.email} OR ${item.phoneNumber}`;
+        } else if (item.emailPref) {
+            return `${item.establishment}'s Email: ${item.email}`;
+        } else if (item.phonePref) {
+            return `${item.establishment}'s Phone Number: ${item.phoneNumber}`;
+        } else {
+            return `${item.establishment} did not provide contact information...`
+        }
+    };
+
     handleFormChange = (event) => {
         const { name, value } = event.target;
         this.setState({
@@ -170,7 +182,7 @@ class DonateTabs extends React.Component {
                                         <List>
                                             {this.state.pickups.map(pickup => (
                                             <ListItem key={pickup._id}>
-                                                {pickup.establishment}
+                                                {pickup.establishment}: {pickup.weekDay}s at {pickup.time}. {this.checkContact(pickup)}
                                             </ListItem>
                                             ))}
                                         </List>
