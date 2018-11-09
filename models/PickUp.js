@@ -11,7 +11,7 @@ const pickUpSchema = new Schema({
     foodType: { type: String, required: true },
     weekDay: { type: String, required: true },
     time: { type: String, required: true },
-    driverLicensedId: { type: String, default: "" },
+    driverLicenseId: { type: String, default: "" },
     driverPhone: { type: String, default: "" },
     delivered: { type: Boolean, default: false },
     dropOffAddress: { type: String, default: "" },

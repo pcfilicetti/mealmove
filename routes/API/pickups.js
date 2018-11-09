@@ -5,4 +5,9 @@ router.route("/")
   .get(pickupsController.findAll)
   .post(pickupsController.create);
 
+router.route("/:id")
+  .get(pickupsController.findById)
+  .put(pickupsController.update)
+  .delete(pickupsController.remove);
+
 module.exports = router;
