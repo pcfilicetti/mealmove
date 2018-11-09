@@ -1,14 +1,12 @@
 const express = require('express');
-const path = require('path');
 const mongoose = require('mongoose');
 const PORT = process.env.PORT || 3001;
 const routes = require('./routes');
 const app = express();
-const jwt = require('express-jwt');
 const bodyParser = require ('body-parser');
-var graphqlHTTP = require('express-graphql');
-var { buildSchema } = require('graphql');
-// const routes = require('./src/routes');
+const graphqlHTTP = require('express-graphql');
+const { buildSchema } = require('graphql');
+const passport = require('passport');
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/pickups');
 
@@ -17,6 +15,9 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+app.use(passport.initialize());
+require('./config/passport.js')
 
 app.use(bodyParser.json());
 //in a routes file:
@@ -48,5 +49,5 @@ app.use('/graphql', graphqlHTTP({
 app.use(routes);
 
 app.listen(PORT, () => {
-  console.log('Express GraphQL Server Now Running On localhost:3000/graphql')
+  console.log('Server on localhost:' + PORT)
 });

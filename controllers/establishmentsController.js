@@ -1,13 +1,6 @@
-const db = require("../models/PickUp");
+const db = require("../models/Establishment");
 
 module.exports = {
-
-    findAll: function(req, res) {
-        db
-        .find(req.query)
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-    },
 
     findById: function(req, res) {
         db
