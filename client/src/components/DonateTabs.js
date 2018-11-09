@@ -1,5 +1,6 @@
 import React from 'react';
 import API from '../utils/API';
+import SignUpForm from './SignUpForm';
 
 import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
@@ -7,14 +8,6 @@ import Box from 'grommet/components/Box';
 import Tabs from 'grommet/components/Tabs';
 import Tab from 'grommet/components/Tab';
 import Paragraph from 'grommet/components/Paragraph';
-import Form from 'grommet/components/Form';
-import FormField from 'grommet/components/FormField';
-import TextInput from 'grommet/components/TextInput';
-import CheckBox from 'grommet/components/CheckBox';
-import Button from 'grommet/components/Button';
-import CheckmarkIcon from 'grommet/components/icons/base/Checkmark';
-import List from 'grommet/components/List';
-import ListItem from 'grommet/components/ListItem';
 
 class DonateTabs extends React.Component {
     state = {
@@ -118,48 +111,7 @@ class DonateTabs extends React.Component {
                                     </Paragraph>
                                 </Box>
                                 <Box wrap={false} margin='small'>
-                                    <Form onSubmit={this.handleSubmit}>
-                                        <FormField label='Establishment Name'>
-                                            <TextInput name='establishment' onDOMChange={this.handleFormChange} value={this.state.establishment} />
-                                        </FormField>
-                                        <FormField label='Email Address'>
-                                            <TextInput name='email' onDOMChange={this.handleFormChange} value={this.state.email} />
-                                        </FormField>
-                                        <FormField label='Phone Number'>
-                                            <TextInput name='phoneNumber' onDOMChange={this.handleFormChange} value={this.state.phoneNumber} />
-                                        </FormField>
-                                        <FormField label='Best Means of Communication'>
-                                            <CheckBox name='emailPref' onChange={this.handleCheckboxChange} label='Email' checked={this.state.emailPref} />
-                                            <CheckBox name='phonePref' onChange={this.handleCheckboxChange} label='Phone' checked={this.state.phonePref} />
-                                        </FormField>
-                                        <FormField label='Establishment Address'>
-                                            <TextInput name='address' onDOMChange={this.handleFormChange} value={this.state.address} />
-                                        </FormField>
-                                        <FormField label='Food Type'>
-                                            <select id='foodType' value={this.state.foodType} onChange={this.handleSelectChange}>
-                                                <option defaultValue value='Prepared Foods'>Prepared Foods</option>
-                                                <option value='Non-Perishable'>Non-Perishable</option>
-                                                <option value='Semi-Perishable'>Semi-Perishable</option>
-                                                <option value='Perishable'>Perishable</option>
-                                            </select>
-                                        </FormField>
-                                        <FormField label='Week Day for Pickup'>
-                                            <select id='weekDay' value={this.state.weekDay} onChange={this.handleSelectChange}>
-                                                <option defaultValue value='Sunday'>Sunday</option>
-                                                <option value='Monday'>Monday</option>
-                                                <option value='Tuesday'>Tuesday</option>
-                                                <option value='Wednesday'>Wednesday</option>
-                                                <option value='Thursday'>Thursday</option>
-                                                <option value='Friday'>Friday</option>
-                                                <option value='Saturday'>Saturday</option>
-                                            </select>
-                                        </FormField>
-                                        <FormField label='Time for Pickup (24-Hour Clock)'>
-                                            <TextInput name='time' value={this.state.time} onDOMChange={this.handleFormChange} />
-                                        </FormField>
-                                        <br />
-                                        <Button type='submit' icon={<CheckmarkIcon />} label='Submit Pickup' onClick={this.handleSubmit} plain={false} accent={true} />
-                                    </Form>
+                                    <SignUpForm type='establishment' />
                                 </Box>
                             </Box>
                         </Tab>
@@ -178,17 +130,7 @@ class DonateTabs extends React.Component {
                                     </Paragraph>
                                 </Box>
                                 <Box wrap={false} margin='small'>
-                                    {this.state.pickups.length ? (
-                                        <List>
-                                            {this.state.pickups.map(pickup => (
-                                            <ListItem key={pickup._id}>
-                                                {pickup.establishment}: {pickup.weekDay}s at {pickup.time}. {this.checkContact(pickup)}
-                                            </ListItem>
-                                            ))}
-                                        </List>
-                                    ) : (
-                                        <h3>No Results to Display</h3>
-                                    )}
+                                    <SignUpForm type='driver' />
                                 </Box>
                             </Box>
                         </Tab>

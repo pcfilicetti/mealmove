@@ -30,7 +30,7 @@ export default {
         return axios.put(`/api/establishments/${id}`, data)
     },
 
-    deleteEstablishment: function(data) {
+    deleteEstablishment: function(id) {
         return axios.delete(`/api/establishments/${id}`);
     },
 
