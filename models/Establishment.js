@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const establishmentSchema = new Schema({
     establishment: { type: String, required: true },
     email: { type: String, required: true },
+    password: { type: String, required: true },
     phoneNumber: { type: String, required: true },
     emailPref: { type: Boolean, default: false },
     phonePref: { type: Boolean, default: false },
