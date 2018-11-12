@@ -77,7 +77,7 @@ class Replate extends Component {
                         <Carousel>
                             <Image src='http://www.natashalandau.net/images/title_good_burger.png'/>
                             <Image src='http://t2.rbxcdn.com/2ca42cc723e65da043f0c98dcddd1b0e'/>
-                            <Image src='http://kwikemartonline.com.au/wp-content/uploads/2018/03/final-approved-logo.png'/> 
+                            <Image src='https://ih0.redbubble.net/image.466833630.4168/flat,1000x1000,075,f.u2.jpg'/> 
                         </Carousel>
                     </Paragraph>
                 </Section>
