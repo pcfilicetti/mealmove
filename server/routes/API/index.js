@@ -1,10 +1,8 @@
 const router = require("express").Router();
 const pickupRoutes = require("./pickups");
-const driverRoutes = require("./drivers");
-const establishmentRoutes = require("./establishments");
+const userRoutes = require('./users');
 
 router.use("/pickups", pickupRoutes);
-router.use("/drivers", driverRoutes);
-router.use("/establishments", establishmentRoutes);
+router.use("/users", userRoutes);
 
 module.exports = router;
