@@ -1,4 +1,4 @@
-const db = require("../models/Driver");
+const db = require("../models/User");
 
 module.exports = {
 
@@ -30,5 +30,4 @@ module.exports = {
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
     }
-    
 };
