@@ -105,7 +105,7 @@ class DonateTabs extends React.Component {
                                         Are you a part of a restaurant group, bakery, supermarket, grocery store, farm, or any other business with excess food? YOUR COMMUNITY NEEDS YOUR HELP!
                                         <br/><br/>
                                         We are looking for businesses to help by giving unsellable but consumable food to those in need.
-                                        Instead of throwing out food waste, your business could sign up with Replate and send it with us to local food banks.
+                                        Instead of throwing out food waste, your business could sign up with MealMove and send it with us to local food banks.
                                         <br/><br/>
                                         We will organize the pickups, you just need to select the time and days of the week that are most convenient for your crew.
                                     </Paragraph>
@@ -141,7 +141,7 @@ class DonateTabs extends React.Component {
                                     <Paragraph>
                                         Are you looking for a way to help out your community without physically having to do any work? Look no further! YOUR COMMUNITY NEEDS YOUR HELP!
                                         <br></br><br></br>
-                                        Here at Replate, you have the ability to donate money to our organization.  We are looking for any amount of donation that can help the organization grow.  The money would be used to help pay the pickup costs and website fee.  As part of the pickup costs, custom boxes will be made that will contain the packaged, donated food.
+                                        Here at MealMove, you have the ability to donate money to our organization.  We are looking for any amount of donation that can help the organization grow.  The money would be used to help pay the pickup costs and website fee.  As part of the pickup costs, custom boxes will be made that will contain the packaged, donated food.
                                     </Paragraph>
                                 </Box>
                                 <Box wrap={false} margin='none' pad='none'>

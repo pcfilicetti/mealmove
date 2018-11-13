@@ -56,7 +56,7 @@ class Replate extends Component {
 
                 {/* hero page */}
                 <Hero background={<Image alt='bread and greens on a wood table' src="https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" fit='cover' full={true} />} backgroundColorIndex='light' size="large">
-                    <Headline margin='none' align="center" size="large" uppercase="true" truncate="true">REPLATE</Headline>
+                    <Headline margin='none' align="center" size="large" uppercase="true" truncate="true">MealMove</Headline>
                     <Box direction='row' justify='center' align='center'>
                         <Box basis='1/2' align='end' pad='medium' />
                         <Box basis='1/2' align='start' pad='medium'>

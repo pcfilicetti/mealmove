@@ -38,7 +38,7 @@ const StatisticsSection = () => (
             National food industry, government agencies, environmental organizations agree to reducing food waste as a top priority for protecting the environment as astounding 21% of landfill volume is food waste.
             </p>
             <p id="aboutText" truncate='true'>
-                Replate aims to connect those with excess food to those who are in need. We are targeting restaurants, grocery stores and farms and asking them to donate food that would be thrown out. 
+                MealMove aims to connect those with excess food to those who are in need. We are targeting restaurants, grocery stores and farms and asking them to donate food that would be thrown out. 
                 Volunters pick up this food and bring it to local food banks.
                 <br></br><br></br><br></br>
             </p>
