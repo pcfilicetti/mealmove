@@ -6,11 +6,11 @@ import ListItem from 'grommet/components/List';
 class DriDriver extends React.Component {
     checkContact = (item) => {
         if (item.emailPref && item.phonePref) {
-            return `${item.establishment}'s Contact Information: ${item.email} OR ${item.phoneNumber}`;
+            return `${item.establishment}'s Contact Information: ${item.email} OR ${item.phone}`;
         } else if (item.emailPref) {
             return `${item.establishment}'s Email: ${item.email}`;
         } else if (item.phonePref) {
-            return `${item.establishment}'s Phone Number: ${item.phoneNumber}`;
+            return `${item.establishment}'s Phone Number: ${item.phone}`;
         } else {
             return `${item.establishment} did not provide contact information...`
         }
