@@ -18,36 +18,20 @@ export default {
         return axios.delete(`/api/pickups/${id}`);
     },
 
-    getEstablishment: function(id) {
-        return axios.get(`/api/establishments/${id}`);
+    getUser: function(id) {
+        return axios.get(`/api/users/${id}`);
     },
 
-    saveEstablishment: function(data) {
-        return axios.post('/api/establishments', data);
+    saveUser: function(data) {
+        return axios.post('/api/users', data);
     },
 
-    updateEstablishment: function(id, data) {
-        return axios.put(`/api/establishments/${id}`, data)
+    updateUser: function(id, data) {
+        return axios.put(`/api/users/${id}`, data)
     },
 
-    deleteEstablishment: function(id) {
-        return axios.delete(`/api/establishments/${id}`);
-    },
-
-    getDriver: function(id) {
-        return axios.get(`/api/drivers/${id}`);
-    },
-
-    saveDriver: function(data) {
-        return axios.post('/api/drivers', data);
-    },
-
-    updateDriver: function(id, data) {
-        return axios.put(`/api/drivers/${id}`, data);
-    },
-
-    deleteDriver: function(id) {
-        return axios.delete(`/api/drivers/${id}`);
+    deleteUser: function(id) {
+        return axios.delete(`/api/users/${id}`);
     }
     
 };

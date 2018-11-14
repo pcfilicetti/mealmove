@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const pickUpSchema = new Schema({
     establishment: { type: String, required: true },
     email: { type: String, required: true },
-    phoneNumber: { type: String, required: true },
+    phone: { type: String, required: true },
     emailPref: { type: Boolean, default: false },
     phonePref: { type: Boolean, default: false },
     address: { type: String, required: true },

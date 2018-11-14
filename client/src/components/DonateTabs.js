@@ -1,6 +1,10 @@
 import React from 'react';
 import API from '../utils/API';
-import SignUpForm from './SignUpForm';
+
+import EstEstablishment from './EstEstablishment';
+import EstDriver from './EstDriver';
+import DriEstablishment from './DriEstablishment';
+import DriDriver from './DriDriver';
 
 import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
@@ -8,26 +12,114 @@ import Box from 'grommet/components/Box';
 import Tabs from 'grommet/components/Tabs';
 import Tab from 'grommet/components/Tab';
 import Paragraph from 'grommet/components/Paragraph';
+import Form from 'grommet/components/Form';
+import FormField from 'grommet/components/FormField';
+import TextInput from 'grommet/components/TextInput';
+import PasswordInput from 'grommet/components/PasswordInput';
+import CheckBox from 'grommet/components/CheckBox';
+import Button from 'grommet/components/Button';
+import CheckmarkIcon from 'grommet/components/icons/base/Checkmark';
 
 class DonateTabs extends React.Component {
     state = {
         establishment: '',
+        fullName: '',
         email: '',
-        phoneNumber: '',
+        password: '',
+        phone: '',
         emailPref: false,
         phonePref: false,
         address: '',
         foodType: 'Prepared Foods',
         weekDay: 'Sunday',
         time: '',
+        vehicleMake: '',
+        vehicleModel: '',
         driverLicenseId: '',
-        driverPhone: '',
-        delivered: false,
+        licensePlate: '',
+        loggedIn: false,
+        viewType: '',
+        currentUser: {},
         pickups: []
     };
 
+    logout = () => {
+        this.setState({
+            loggedIn: false
+        });
+    }
+
     componentDidMount() {
+        this.logout();
         this.loadPickups();
+    }
+
+    login = (type) => {
+        if (type === 'e') {
+            this.setState({
+                loggedIn: true,
+                viewType: type,
+                currentUser: {
+                    establishment: this.state.establishment,
+                    email: this.state.email,
+                    phone: this.state.phone,
+                    emailPref: this.state.emailPref,
+                    phonePref: this.state.phonePref,
+                    address: this.state.address,
+                    foodType: this.state.foodType
+                }
+            });
+            this.setState({
+                establishment: '',
+                fullName: '',
+                email: '',
+                password: '',
+                phone: '',
+                emailPref: false,
+                phonePref: false,
+                address: '',
+                foodType: 'Prepared Foods',
+                weekDay: 'Sunday',
+                time: '',
+                vehicleMake: '',
+                vehicleModel: '',
+                driverLicenseId: '',
+                licensePlate: ''
+            });
+        } else if (type === 'd') {
+            this.setState({
+                loggedIn: true,
+                viewType: type,
+                currentUser: {
+                    fullName: this.state.fullName,
+                    email: this.state.email,
+                    phone: this.state.phone,
+                    emailPref: this.state.emailPref,
+                    phonePref: this.state.phonePref,
+                    driverLicenseId: this.state.driverLicenseId,
+                    vehicleMake: this.state.vehicleMake,
+                    vehicleModel: this.state.vehicleModel,
+                    licensePlate: this.state.licensePlate
+                }
+            });
+            this.setState({
+                establishment: '',
+                fullName: '',
+                email: '',
+                password: '',
+                phone: '',
+                emailPref: false,
+                phonePref: false,
+                address: '',
+                foodType: 'Prepared Foods',
+                weekDay: 'Sunday',
+                time: '',
+                vehicleMake: '',
+                vehicleModel: '',
+                driverLicenseId: '',
+                licensePlate: ''
+            })
+        }
     };
 
     loadPickups = () => {
@@ -36,18 +128,6 @@ class DonateTabs extends React.Component {
                 this.setState({ pickups: res.data })
             })
             .catch(err => console.log(err));
-    };
-
-    checkContact = (item) => {
-        if (item.emailPref && item.phonePref) {
-            return `${item.establishment}'s Contact Information: ${item.email} OR ${item.phoneNumber}`;
-        } else if (item.emailPref) {
-            return `${item.establishment}'s Email: ${item.email}`;
-        } else if (item.phonePref) {
-            return `${item.establishment}'s Phone Number: ${item.phoneNumber}`;
-        } else {
-            return `${item.establishment} did not provide contact information...`
-        }
     };
 
     handleFormChange = (event) => {
@@ -71,25 +151,57 @@ class DonateTabs extends React.Component {
         });
     };
 
-    handleSubmit = (event) => {
+    handleEstablishmentSubmit = (event) => {
         event.preventDefault();
-        if (this.state.establishment && this.state.email && this.state.phoneNumber && (this.state.emailPref || this.state.phonePref) && this.state.address && this.state.foodType && this.state.weekDay && this.state.time) {
-        API.savePickup({
+        if (this.state.establishment && this.state.email && this.state.password && this.state.phone && (this.state.emailPref || this.state.phonePref) && this.state.address && this.state.foodType) {
+        API.saveUser({
             establishment: this.state.establishment,
             email: this.state.email,
-            phoneNumber: this.state.phoneNumber,
+            password: this.state.password,
+            phone: this.state.phone,
             emailPref: this.state.emailPref,
             phonePref: this.state.phonePref,
             address: this.state.address,
-            foodType: this.state.foodType,
-            weekDay: this.state.weekDay,
-            time: this.state.time
+            foodType: this.state.foodType
         })
-            .then(res => this.loadPickups())
+            .then(res => this.login('e'))
             .catch(err => console.log(err));
-            console.log('should have posted');
+        } else if (!(this.state.emailPref || this.state.phonePref)) {
+            alert("Please select the best means of communication.");
+        } else {
+            alert("Please fill out all form fields.");
         }
-        console.log(this.state)
+    };
+
+    updateDayTime = (day, time) => {
+        this.setState({
+            weekDay: day,
+            time: time
+        });
+        this.handlePickupSubmit();
+    }
+
+    handleDriverSubmit = (event) => {
+        event.preventDefault();
+        if (this.state.fullName && this.state.email && this.state.password && this.state.phone && (this.state.emailPref || this.state.phonePref) && this.state.vehicleMake && this.state.vehicleModel && this.state.licensePlate) {
+        API.saveUser({
+            fullName: this.state.fullName,
+            email: this.state.email,
+            password: this.state.password,
+            phone: this.state.phone,
+            emailPref: this.state.emailPref,
+            phonePref: this.state.phonePref,
+            vehicleMake: this.state.vehicleMake,
+            vehicleModel: this.state.vehicleModel,
+            licensePlate: this.state.licensePlate
+        })
+            .then(res => this.login('d'))
+            .catch(err => console.log(err));
+        } else if (!(this.state.emailPref || this.state.phonePref)) {
+            alert("Please select the best means of communication.");
+        } else {
+            alert("Please fill out all form fields.");
+        }
     };
 
     render() {
@@ -111,7 +223,45 @@ class DonateTabs extends React.Component {
                                     </Paragraph>
                                 </Box>
                                 <Box wrap={false} margin='small'>
-                                    <SignUpForm type='establishment' />
+                                    {this.state.loggedIn ? (
+                                        this.state.viewType === 'e' ? (
+                                            <EstEstablishment updateParent={this.updateDayTime} currentUser={this.state.currentUser} />
+                                        ) : (
+                                            <DriEstablishment onClick={this.logout} />
+                                        )
+                                    ) : (
+                                        <Form onSubmit={this.handleEstablishmentSubmit}>
+                                            <FormField label='Establishment Name'>
+                                                <TextInput name='establishment' onDOMChange={this.handleFormChange} value={this.state.establishment} />
+                                            </FormField>
+                                            <FormField label='Email Address'>
+                                                <TextInput name='email' onDOMChange={this.handleFormChange} value={this.state.email} />
+                                            </FormField>
+                                            <FormField label='Password'>
+                                                <PasswordInput name='password' onChange={this.handleFormChange} value={this.state.password} />    
+                                            </FormField>
+                                            <FormField label='Phone Number'>
+                                                <TextInput name='phone' onDOMChange={this.handleFormChange} value={this.state.phone} />
+                                            </FormField>
+                                            <FormField label='Best Means of Communication'>
+                                                <CheckBox name='emailPref' onChange={this.handleCheckboxChange} label='Email' checked={this.state.emailPref} />
+                                                <CheckBox name='phonePref' onChange={this.handleCheckboxChange} label='Phone' checked={this.state.phonePref} />
+                                            </FormField>
+                                            <FormField label='Establishment Address'>
+                                                <TextInput name='address' onDOMChange={this.handleFormChange} value={this.state.address} />
+                                            </FormField>
+                                            <FormField label='Food Type'>
+                                                <select id='foodType' value={this.state.foodType} onChange={this.handleSelectChange}>
+                                                    <option defaultValue value='Prepared Foods'>Prepared Foods</option>
+                                                    <option value='Non-Perishable'>Non-Perishable</option>
+                                                    <option value='Semi-Perishable'>Semi-Perishable</option>
+                                                    <option value='Perishable'>Perishable</option>
+                                                </select>
+                                            </FormField>
+                                            <br />
+                                            <Button type='submit' icon={<CheckmarkIcon />} label='Sign Up!' onClick={this.handleEstablishmentSubmit} plain={false} accent={true} />
+                                        </Form>
+                                    )}
                                 </Box>
                             </Box>
                         </Tab>
@@ -130,7 +280,43 @@ class DonateTabs extends React.Component {
                                     </Paragraph>
                                 </Box>
                                 <Box wrap={false} margin='small'>
-                                    <SignUpForm type='driver' />
+                                    {this.state.loggedIn ? (
+                                        this.state.viewType === 'e' ? (
+                                            <EstDriver onClick={this.logout} />
+                                        ) : (
+                                            <DriDriver pickups={this.state.pickups} />
+                                        )
+                                    ) : (
+                                        <Form onSubmit={this.handleDriverSubmit}>
+                                            <FormField label='Full Name'>
+                                                <TextInput name='fullName' onDOMChange={this.handleFormChange} value={this.state.fullName} />
+                                            </FormField>
+                                            <FormField label='Email Address'>
+                                                <TextInput name='email' onDOMChange={this.handleFormChange} value={this.state.email} />
+                                            </FormField>
+                                            <FormField label='Password'>
+                                                <PasswordInput name='password' onChange={this.handleFormChange} value={this.state.password} />    
+                                            </FormField>
+                                            <FormField label='Phone Number'>
+                                                <TextInput name='phone' onDOMChange={this.handleFormChange} value={this.state.phone} />
+                                            </FormField>
+                                            <FormField label='Best Means of Communication'>
+                                                <CheckBox name='emailPref' onChange={this.handleCheckboxChange} label='Email' checked={this.state.emailPref} />
+                                                <CheckBox name='phonePref' onChange={this.handleCheckboxChange} label='Phone' checked={this.state.phonePref} />
+                                            </FormField>
+                                            <FormField label='Vehicle Make'>
+                                                <TextInput name='vehicleMake' onDOMChange={this.handleFormChange} value={this.state.vehicleMake} />
+                                            </FormField>
+                                            <FormField label='Vehicle Model'>
+                                                <TextInput name='vehicleModel' onDOMChange={this.handleFormChange} value={this.state.vehicleModel} />
+                                            </FormField>
+                                            <FormField label='License Plate'>
+                                                <TextInput name='licensePlate' onDOMChange={this.handleFormChange} value={this.state.licensePlate} />
+                                            </FormField>
+                                            <br />
+                                            <Button type='submit' icon={<CheckmarkIcon />} label='Sign Up!' onClick={this.handleDriverSubmit} plain={false} accent={true} />
+                                        </Form>
+                                    )}
                                 </Box>
                             </Box>
                         </Tab>
