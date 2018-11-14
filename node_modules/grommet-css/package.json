@@ -1,0 +1,23 @@
+{
+  "name": "grommet-css",
+  "version": "1.6.0",
+  "description": "Standalone css for grommet ui library.",
+  "main": "build/index.min.css",
+  "scripts": {
+    "build": "node-sass index.scss build/index.min.css --output-style compressed --include-path ./node_modules",
+    "build:buildabode": "node-sass themes/buildabode/index.scss build/buildabode/index.min.css --output-style compressed --include-path ./node_modules",
+    "start": "node-sass index.scss build/index.min.css -w --output-style compressed --include-path ./node_modules"
+  },
+  "keywords": [
+    "create-react-app",
+    "grommet"
+  ],
+  "author": "Mel van Londen",
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "^4.5.1"
+  },
+  "dependencies": {
+    "grommet": "^1.6.0"
+  }
+}
