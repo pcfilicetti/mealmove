@@ -44,8 +44,6 @@ class EstEstablishment extends React.Component {
                 .then(res => alert("Pickup Scheduled!"))
                 .catch(err => alert(err));
                 console.log('should have posted');
-        } else {
-            alert("something fucked up");
         }
     };
 
