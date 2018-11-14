@@ -4,8 +4,8 @@ const PORT = process.env.PORT || 3001;
 const routes = require('./routes');
 const app = express();
 const bodyParser = require ('body-parser');
-const graphqlHTTP = require('express-graphql');
-const { buildSchema } = require('graphql');
+const cors = require('cors');
+const helmet = require('helmet');
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/pickups');
 
@@ -15,35 +15,12 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+app.use(helmet());
+
+app.use(cors());
+
 app.use(bodyParser.json());
-//in a routes file:
-app.get('/data', async(req,res)=> {
-  let data = await DataCue.query()
-    .limit(15);
-
-    res.send(data);
-});
-
-var schema = buildSchema (`type Query
-{ 
-  message: String
-}
-`);
-
-//root resolver
-var root = {
-  message: () => 'Hello World!'
-};
-
-// var app = express();
-app.use('/graphql', graphqlHTTP({
-  schema: schema,
-  rootValue: root,
-  graphiql: true
-}));
 
 app.use(routes);
 
-app.listen(PORT, () => {
-  console.log('Server on localhost:' + PORT)
-});
+app.listen(PORT);

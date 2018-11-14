@@ -9,46 +9,15 @@ import Paragraph from 'grommet/components/Paragraph';
 import Carousel from 'grommet/components/Carousel';
 
 import React, { Component } from "react";
-import API from "../../utils/API";
 
 import CustomFooter from '../../components/CustomFooter';
 import DonateTabs from '../../components/DonateTabs';
 import StatisticsSection from '../../components/StatisticsSection';
 
 class Replate extends Component {
-    state = {
-        establishment: '',
-        email: '',
-        phoneNumber: '',
-        emailPref: false,
-        phonePref: false,
-        address: '',
-        foodType: 'Prepared Foods',
-        weekDay: 'Sunday',
-        time: '',
-        driverLicenseId: '',
-        driverPhone: '',
-        delivered: false,
-        pickups: []
-    };
-
-    componentDidMount() {
-        this.loadPickups();
-    };
-
-    loadPickups = () => {
-        API.getPickups()
-            .then(res => {
-                this.setState({ pickups: res.data })
-            })
-            .catch(err => console.log(err));
-    };
-
     handleClick = (event) => {
         event.preventDefault();
     };
-
-    
 
     render () {
         return (
